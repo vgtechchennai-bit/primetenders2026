@@ -1,30 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="PrimeTenders.in — Google Sheets, Excel, Apps Script, tender and custom web application automation services.">
-  <title>PrimeTenders.in | Business Automation & Tender Solutions</title>
+  <meta name="description" content="PrimeTenders.in — Tender automation, Digital Signatures, Web Design, Google Apps Script and custom business web applications.">
+  <title>PrimeTenders.in | Business Automation, Web Design & Tender Solutions</title>
 
-  <!-- Tailwind CSS CDN: ideal for prototyping / static deployment.
-       For production, compile Tailwind with your build tool. -->
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            navy: '#173A67',
-            navy2: '#0F2D52',
-            teal: '#28B7AE',
-            sky: '#78B6FF',
-            ink: '#152238',
-            muted: '#64748B',
-            line: '#E2E8F0'
-          },
-          boxShadow: {
-            soft: '0 12px 35px rgba(23,58,103,.10)',
-            card: '0 8px 25px rgba(23,58,103,.08)'
+            navy: '#0f274a',
+            navy2: '#091930',
+            teal: '#0d9488',
+            tealLight: '#14b8a6',
+            sky: '#38bdf8',
+            slateDark: '#0f172a'
           }
         }
       }
@@ -32,134 +26,241 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Liberation+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="bg-slate-50 text-slate-700 antialiased">
+<body class="bg-slate-50 font-['Plus_Jakarta_Sans',sans-serif] text-slate-700 antialiased selection:bg-teal selection:text-white">
+
   <!-- NAVBAR -->
-  <header id="navbar" class="fixed inset-x-0 top-0 z-50 border-b border-slate-200/70 bg-white/90 backdrop-blur-xl">
+  <header class="fixed inset-x-0 top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur-md shadow-sm">
     <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-8">
-      <a href="#home" class="flex items-center gap-3">
-        <div class="grid h-10 w-10 place-items-center rounded-xl bg-navy text-white shadow-sm">
-          <span class="text-lg font-extrabold">PT</span>
+      
+      <!-- Brand Logo -->
+      <a href="#home" class="flex items-center gap-3 group">
+        <div class="grid h-11 w-11 place-items-center rounded-2xl bg-gradient-to-br from-navy to-teal text-white shadow-md shadow-navy/20 transition-transform group-hover:scale-105">
+          <span class="text-xl font-black tracking-wider">PT</span>
         </div>
         <div>
           <div class="text-xl font-extrabold tracking-tight text-navy">PrimeTenders<span class="text-teal">.in</span></div>
-          <div class="hidden text-[10px] font-semibold uppercase tracking-[.18em] text-slate-400 sm:block">Automation & Tender Solutions</div>
+          <div class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Digital Solutions & Tenders</div>
         </div>
       </a>
 
-      <nav class="hidden items-center gap-8 lg:flex">
-        <a href="#services" class="nav-link">Services</a>
-        <a href="#automation" class="nav-link">Automation</a>
-        <a href="#process" class="nav-link">Process</a>
-        <a href="#about" class="nav-link">About</a>
+      <!-- Desktop Navigation -->
+      <nav class="hidden items-center gap-1 lg:flex">
+        <a href="#home" class="nav-item">Home</a>
+
+        <!-- Services Dropdown -->
+        <div class="relative group">
+          <button class="nav-item inline-flex items-center gap-1">
+            Services
+            <svg class="h-4 w-4 transition-transform group-hover:rotate-180 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="dropdown-panel group-hover:visible group-hover:opacity-100">
+            <div class="p-2 space-y-1">
+              <a href="#services" data-service="Web Design & UI Development" class="dropdown-link group/link">
+                <span class="dropdown-icon bg-indigo-50 text-indigo-600">🌐</span>
+                <div>
+                  <div class="text-sm font-bold text-navy group-hover/link:text-teal">Web Design & Development</div>
+                  <div class="text-xs text-slate-400">Responsive websites, landing pages & portals</div>
+                </div>
+              </a>
+              <a href="#services" data-service="Google Sheets & Apps Script" class="dropdown-link group/link">
+                <span class="dropdown-icon bg-emerald-50 text-emerald-600">▦</span>
+                <div>
+                  <div class="text-sm font-bold text-navy group-hover/link:text-teal">Google Sheets & Apps Script</div>
+                  <div class="text-xs text-slate-400">Custom business automation, triggers & tools</div>
+                </div>
+              </a>
+              <a href="#services" data-service="MS Excel & VBA" class="dropdown-link group/link">
+                <span class="dropdown-icon bg-amber-50 text-amber-600">▤</span>
+                <div>
+                  <div class="text-sm font-bold text-navy group-hover/link:text-teal">MS Excel & Macros (VBA)</div>
+                  <div class="text-xs text-slate-400">Data consolidation, reporting & dashboards</div>
+                </div>
+              </a>
+              <a href="#services" data-service="Tender & GeM Services" class="dropdown-link group/link">
+                <span class="dropdown-icon bg-sky/15 text-sky">✓</span>
+                <div>
+                  <div class="text-sm font-bold text-navy group-hover/link:text-teal">Tender & GeM Consultancy</div>
+                  <div class="text-xs text-slate-400">Documentation, submission & portal bidding</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Products Dropdown -->
+        <div class="relative group">
+          <button class="nav-item inline-flex items-center gap-1">
+            Products
+            <svg class="h-4 w-4 transition-transform group-hover:rotate-180 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="dropdown-panel group-hover:visible group-hover:opacity-100">
+            <div class="p-2 space-y-1">
+              <a href="#products" data-service="Digital Signature Certificate (DSC)" class="dropdown-link group/link">
+                <span class="dropdown-icon bg-rose-50 text-rose-600">🔐</span>
+                <div>
+                  <div class="text-sm font-bold text-navy group-hover/link:text-teal">Digital Signature (DSC)</div>
+                  <div class="text-xs text-slate-400">Class 3 DSC with USB token for e-tendering</div>
+                </div>
+              </a>
+              <a href="#products" data-service="Custom Web Apps" class="dropdown-link group/link">
+                <span class="dropdown-icon bg-teal/10 text-teal">⌘</span>
+                <div>
+                  <div class="text-sm font-bold text-navy group-hover/link:text-teal">Turnkey Web Applications</div>
+                  <div class="text-xs text-slate-400">CRM, Quotation engines, MIS portals</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <a href="#automation" class="nav-item">Automation Flow</a>
+        <a href="#about" class="nav-item">About</a>
       </nav>
 
+      <!-- Desktop Actions -->
       <div class="hidden items-center gap-3 sm:flex">
-        <a href="tel:+919876543210" class="rounded-xl px-4 py-2.5 text-sm font-semibold text-navy hover:bg-slate-100">Call Us</a>
-        <a href="#enquire" class="rounded-xl bg-teal px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-teal/20 transition hover:-translate-y-0.5 hover:bg-[#20a79f]">Get Started <span class="ml-1">→</span></a>
+        <a href="tel:+918148147577" class="rounded-xl px-4 py-2.5 text-sm font-bold text-navy hover:bg-slate-100 transition">
+          +91 814 814 7577
+        </a>
+        <a href="#enquire" class="inline-flex items-center gap-2 rounded-xl bg-teal px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-teal/20 transition-all hover:bg-tealLight hover:-translate-y-0.5">
+          Get Started <span>→</span>
+        </a>
       </div>
 
-      <button id="menuBtn" class="grid h-11 w-11 place-items-center rounded-xl border border-slate-200 bg-white text-navy lg:hidden" aria-label="Open menu">
-        <span class="text-xl">☰</span>
+      <!-- Mobile Hamburger Button -->
+      <button id="menuBtn" class="grid h-11 w-11 place-items-center rounded-xl border border-slate-200 bg-white text-navy lg:hidden focus:ring-2 focus:ring-teal" aria-label="Toggle Navigation">
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
       </button>
     </div>
 
-    <div id="mobileMenu" class="hidden border-t border-slate-100 bg-white px-5 pb-5 lg:hidden">
-      <div class="flex flex-col gap-2 pt-3">
-        <a href="#services" class="mobile-link">Services</a>
-        <a href="#automation" class="mobile-link">Automation</a>
-        <a href="#process" class="mobile-link">Process</a>
-        <a href="#about" class="mobile-link">About</a>
-        <a href="#enquire" class="mt-2 rounded-xl bg-teal px-4 py-3 text-center font-bold text-white">Get Started →</a>
+    <!-- Mobile Drawer Menu -->
+    <div id="mobileMenu" class="hidden border-t border-slate-100 bg-white px-6 py-6 shadow-xl lg:hidden max-h-[85vh] overflow-y-auto">
+      <div class="flex flex-col space-y-4">
+        <a href="#home" class="mobile-nav-link">Home</a>
+        
+        <div class="py-2 border-y border-slate-100">
+          <div class="text-xs font-black uppercase tracking-wider text-slate-400 mb-2">Services</div>
+          <div class="space-y-2 pl-3">
+            <a href="#services" data-service="Web Design & UI Development" class="block font-semibold text-navy hover:text-teal">🌐 Web Design & UI</a>
+            <a href="#services" data-service="Google Sheets & Apps Script" class="block font-semibold text-navy hover:text-teal">▦ Google Sheets & Apps Script</a>
+            <a href="#services" data-service="MS Excel & VBA" class="block font-semibold text-navy hover:text-teal">▤ MS Excel & Macros</a>
+            <a href="#services" data-service="Tender & GeM Services" class="block font-semibold text-navy hover:text-teal">✓ Tender & GeM Support</a>
+          </div>
+        </div>
+
+        <div class="py-2 border-b border-slate-100">
+          <div class="text-xs font-black uppercase tracking-wider text-slate-400 mb-2">Products</div>
+          <div class="space-y-2 pl-3">
+            <a href="#products" data-service="Digital Signature Certificate (DSC)" class="block font-semibold text-navy hover:text-teal">🔐 Digital Signature (Class 3 DSC)</a>
+            <a href="#products" data-service="Custom Web Apps" class="block font-semibold text-navy hover:text-teal">⌘ Web Portals & Tools</a>
+          </div>
+        </div>
+
+        <a href="#automation" class="mobile-nav-link">Automation Flow</a>
+        <a href="#about" class="mobile-nav-link">About Company</a>
+        <a href="#enquire" class="w-full text-center rounded-xl bg-navy px-4 py-3 font-bold text-white shadow-md">Submit Enquiry →</a>
       </div>
     </div>
   </header>
 
   <main>
-    <!-- HERO -->
-    <section id="home" class="relative overflow-hidden pt-32">
-      <div class="absolute -right-32 -top-24 h-96 w-96 rounded-full bg-sky/20 blur-3xl"></div>
-      <div class="absolute -left-32 top-40 h-80 w-80 rounded-full bg-teal/10 blur-3xl"></div>
+    <!-- HERO SECTION -->
+    <section id="home" class="relative overflow-hidden pt-32 pb-20 lg:pt-36 lg:pb-28">
+      <div class="absolute -right-40 -top-20 h-[500px] w-[500px] rounded-full bg-teal/10 blur-3xl pointer-events-none"></div>
+      <div class="absolute -left-40 top-60 h-[450px] w-[450px] rounded-full bg-sky/10 blur-3xl pointer-events-none"></div>
 
-      <div class="relative mx-auto grid max-w-7xl items-center gap-14 px-5 pb-20 lg:grid-cols-[1.05fr_.95fr] lg:px-8 lg:pb-28">
-        <div>
-          <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-sky/30 bg-sky/10 px-4 py-2 text-xs font-bold text-navy">
-            <span class="h-2 w-2 rounded-full bg-teal"></span>
-            SMART BUSINESS AUTOMATION
+      <div class="relative mx-auto grid max-w-7xl items-center gap-12 px-5 lg:grid-cols-12 lg:px-8">
+        <div class="lg:col-span-7">
+          <div class="inline-flex items-center gap-2 rounded-full border border-teal/30 bg-teal/5 px-4 py-1.5 text-xs font-extrabold text-teal">
+            <span class="h-2 w-2 rounded-full bg-teal animate-pulse"></span>
+            ALL-IN-ONE BUSINESS DIGITIZATION & AUTOMATION
           </div>
 
-          <h1 class="max-w-3xl text-4xl font-extrabold leading-[1.08] tracking-tight text-navy sm:text-5xl lg:text-6xl">
-            Turn manual work into
-            <span class="text-teal">smart workflows.</span>
+          <h1 class="mt-6 text-4xl font-extrabold leading-[1.12] tracking-tight text-navy sm:text-5xl lg:text-6xl">
+            Tender solutions, digital signatures & <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal to-sky">smart workflows.</span>
           </h1>
 
-          <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
-            Google Sheets, Excel, Apps Script and custom web applications designed around the way your business actually works.
+          <p class="mt-6 text-lg leading-relaxed text-slate-600 max-w-2xl">
+            Accelerate your business with end-to-end tender documentation, Class 3 Digital Signatures, modern web design, and custom Google Apps Script automation.
           </p>
 
           <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a href="#enquire" class="inline-flex items-center justify-center rounded-xl bg-navy px-6 py-3.5 font-bold text-white shadow-lg shadow-navy/20 transition hover:-translate-y-0.5 hover:bg-navy2">
-              Discuss Your Requirement <span class="ml-2">→</span>
+            <a href="#enquire" class="inline-flex items-center justify-center rounded-xl bg-navy px-7 py-4 text-base font-bold text-white shadow-xl shadow-navy/20 transition-all hover:bg-navy2 hover:-translate-y-0.5">
+              Discuss Your Project <span class="ml-2">→</span>
             </a>
-            <a href="#services" class="inline-flex items-center justify-center rounded-xl border border-slate-300 bg-white px-6 py-3.5 font-bold text-navy transition hover:border-navy">
-              Explore Services
+            <a href="#products" class="inline-flex items-center justify-center rounded-xl border border-slate-300 bg-white px-7 py-4 text-base font-bold text-navy transition hover:border-navy hover:bg-slate-50">
+              Explore Products
             </a>
           </div>
 
-          <div class="mt-10 flex flex-wrap gap-x-8 gap-y-4 text-sm">
-            <div><strong class="text-navy">15+</strong> years experience</div>
-            <div><strong class="text-navy">60%</strong> process efficiency</div>
-            <div><strong class="text-navy">India</strong> wide support</div>
+          <!-- Trust Badges -->
+          <div class="mt-12 flex flex-wrap items-center gap-8 border-t border-slate-200/80 pt-8 text-slate-600">
+            <div><span class="block text-2xl font-black text-navy">15+</span><span class="text-xs font-semibold">Years Experience</span></div>
+            <div class="h-8 w-px bg-slate-200"></div>
+            <div><span class="block text-2xl font-black text-navy">100%</span><span class="text-xs font-semibold">Legal DSC Compliance</span></div>
+            <div class="h-8 w-px bg-slate-200"></div>
+            <div><span class="block text-2xl font-black text-navy">24-48h</span><span class="text-xs font-semibold">Fast Turnaround</span></div>
           </div>
         </div>
 
-        <!-- HERO VISUAL -->
-        <div class="relative">
-          <div class="absolute -inset-5 rounded-[2rem] bg-gradient-to-br from-sky/20 via-transparent to-teal/10 blur-xl"></div>
-          <div class="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-5 shadow-soft sm:p-7">
+        <!-- Interactive Visual Card -->
+        <div class="lg:col-span-5">
+          <div class="relative rounded-3xl border border-slate-200/80 bg-white/80 p-6 shadow-2xl backdrop-blur-xl sm:p-8">
             <div class="flex items-center justify-between border-b border-slate-100 pb-5">
               <div>
-                <div class="text-xs font-bold uppercase tracking-wider text-slate-400">Automation Flow</div>
-                <div class="mt-1 text-xl font-extrabold text-navy">One source. One workflow.</div>
+                <span class="text-xs font-black uppercase tracking-wider text-slate-400">Integrated Platform</span>
+                <h3 class="text-lg font-bold text-navy">Prime Tenders Hub</h3>
               </div>
-              <div class="rounded-full bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-700">LIVE</div>
+              <span class="rounded-full bg-emerald-100 px-3 py-1 text-xs font-extrabold text-emerald-700">Active</span>
             </div>
 
-            <div class="mt-7 grid grid-cols-3 items-center gap-2">
-              <div class="workflow-box">
-                <div class="icon-box bg-slate-100 text-slate-600">▤</div>
-                <span>Excel</span>
+            <!-- Workflow Graph -->
+            <div class="mt-6 space-y-3.5">
+              <div class="flex items-center gap-3.5 rounded-2xl border border-slate-100 bg-slate-50/70 p-3.5">
+                <div class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-rose-100 text-rose-700 font-bold">🔐</div>
+                <div class="flex-1">
+                  <div class="text-xs font-bold text-navy">Digital Signature (DSC)</div>
+                  <div class="text-[11px] text-slate-500">Class 3 Signing & Encryption ready</div>
+                </div>
+                <span class="text-xs font-bold text-teal">Ready</span>
               </div>
-              <div class="flow-line"><span>→</span></div>
-              <div class="workflow-box">
-                <div class="icon-box bg-sky text-navy">▦</div>
-                <span>Google Sheets</span>
+
+              <div class="flex items-center gap-3.5 rounded-2xl border border-slate-100 bg-slate-50/70 p-3.5">
+                <div class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-indigo-100 text-indigo-700 font-bold">🌐</div>
+                <div class="flex-1">
+                  <div class="text-xs font-bold text-navy">Modern Responsive Website</div>
+                  <div class="text-[11px] text-slate-500">Dynamic lead generation & showcases</div>
+                </div>
+                <span class="text-xs font-bold text-teal">Fast</span>
               </div>
-              <div class="flow-line"><span>→</span></div>
-              <div class="workflow-box">
-                <div class="icon-box bg-navy text-white">⌘</div>
-                <span>Web App</span>
+
+              <div class="flex items-center gap-3.5 rounded-2xl border border-slate-100 bg-slate-50/70 p-3.5">
+                <div class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-sky/20 text-navy font-bold">▦</div>
+                <div class="flex-1">
+                  <div class="text-xs font-bold text-navy">Google Sheets & Apps Script</div>
+                  <div class="text-[11px] text-slate-500">Automated quotes, emails & MIS dashboards</div>
+                </div>
+                <span class="text-xs font-bold text-teal">Sync</span>
               </div>
             </div>
 
-            <div class="mt-8 grid gap-3 sm:grid-cols-2">
-              <div class="mini-stat">
-                <span>Manual entries</span><strong class="text-red-500">−78%</strong>
+            <div class="mt-6 rounded-2xl bg-navy p-4 text-white">
+              <div class="flex items-center justify-between text-xs font-bold">
+                <span>Efficiency Boost</span>
+                <span class="text-tealLight">+85% Saved Time</span>
               </div>
-              <div class="mini-stat">
-                <span>Data visibility</span><strong class="text-teal">+100%</strong>
-              </div>
-            </div>
-
-            <div class="mt-4 rounded-2xl bg-slate-50 p-4">
-              <div class="mb-3 flex justify-between text-xs font-semibold text-slate-500">
-                <span>Automation progress</span><span>92%</span>
-              </div>
-              <div class="h-2 overflow-hidden rounded-full bg-slate-200">
-                <div class="h-full w-[92%] rounded-full bg-gradient-to-r from-navy to-teal"></div>
+              <div class="mt-2 h-2 rounded-full bg-slate-700 overflow-hidden">
+                <div class="h-full w-4/5 rounded-full bg-gradient-to-r from-teal to-sky"></div>
               </div>
             </div>
           </div>
@@ -167,163 +268,335 @@
       </div>
     </section>
 
-    <!-- SERVICES -->
-    <section id="services" class="border-y border-slate-200 bg-white py-20 lg:py-24">
+    <!-- PRODUCTS SECTION -->
+    <section id="products" class="border-t border-slate-200 bg-white py-20 lg:py-24">
       <div class="mx-auto max-w-7xl px-5 lg:px-8">
         <div class="max-w-2xl">
-          <span class="section-kicker">WHAT WE DO</span>
-          <h2 class="section-title">Build once. Automate repeatedly.</h2>
-          <p class="section-copy">Practical automation solutions that remove repetitive work, improve accuracy and give your team better visibility.</p>
+          <span class="text-xs font-black uppercase tracking-widest text-teal">FEATURED PRODUCTS</span>
+          <h2 class="mt-2 text-3xl font-extrabold tracking-tight text-navy sm:text-4xl">Essential Business & Tender Tools</h2>
+          <p class="mt-3 text-base text-slate-600">Get certified credentials and purpose-built software applications to bid and operate seamlessly.</p>
         </div>
 
-        <div class="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-          <article class="service-card">
-            <div class="service-icon bg-sky/15 text-navy">▦</div>
-            <h3>Google Sheets & Apps Script</h3>
-            <p>Automate data, MIS, quotations, alerts, approvals and business workflows.</p>
-            <ul><li>Sales tracking</li><li>Quotation automation</li><li>MIS dashboards</li></ul>
-          </article>
+        <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          
+          <!-- Product: Digital Signature -->
+          <div class="group relative rounded-3xl border border-slate-200 bg-slate-50/40 p-8 shadow-sm transition-all hover:-translate-y-1 hover:border-teal hover:bg-white hover:shadow-xl">
+            <div class="grid h-14 w-14 place-items-center rounded-2xl bg-rose-50 text-2xl font-bold text-rose-600">🔐</div>
+            <div class="mt-6 inline-flex rounded-full bg-rose-100/80 px-3 py-1 text-[11px] font-extrabold text-rose-700">HIGH DEMAND</div>
+            <h3 class="mt-3 text-xl font-extrabold text-navy">Digital Signature (Class 3 DSC)</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">Government-approved Class 3 Digital Signature Certificate with secure USB cryptographic tokens. Required for e-Procurement, GeM, MCA, GST, and Income Tax.</p>
+            <ul class="mt-6 space-y-2.5 text-xs font-semibold text-slate-700">
+              <li class="flex items-center gap-2"><span class="text-teal font-black">✓</span> 2-Year & 3-Year Validity Options</li>
+              <li class="flex items-center gap-2"><span class="text-teal font-black">✓</span> Signing & Encryption Combo DSC</li>
+              <li class="flex items-center gap-2"><span class="text-teal font-black">✓</span> Instant Video Verification Support</li>
+            </ul>
+            <a href="#enquire" data-service="Digital Signature Certificate (DSC)" class="quick-enquire-btn mt-8 inline-flex w-full items-center justify-center rounded-xl bg-navy py-3 text-xs font-bold text-white transition hover:bg-teal">Order Digital Signature →</a>
+          </div>
 
-          <article class="service-card">
-            <div class="service-icon bg-emerald-50 text-emerald-700">▤</div>
-            <h3>MS Excel & VBA</h3>
-            <p>Turn complex Excel processes into fast, repeatable tools your team can use easily.</p>
-            <ul><li>Custom macros</li><li>Data consolidation</li><li>Automated calculations</li></ul>
-          </article>
+          <!-- Product: Custom Web Portals -->
+          <div class="group relative rounded-3xl border border-slate-200 bg-slate-50/40 p-8 shadow-sm transition-all hover:-translate-y-1 hover:border-teal hover:bg-white hover:shadow-xl">
+            <div class="grid h-14 w-14 place-items-center rounded-2xl bg-indigo-50 text-2xl font-bold text-indigo-600">⌘</div>
+            <div class="mt-6 inline-flex rounded-full bg-indigo-100/80 px-3 py-1 text-[11px] font-extrabold text-indigo-700">CUSTOM SOLUTION</div>
+            <h3 class="mt-3 text-xl font-extrabold text-navy">Dynamic Business Web Portals</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">Lightweight, high-speed web apps tailored for internal teams. Integrated directly with Google Sheets or SQLite for zero server-maintenance overhead.</p>
+            <ul class="mt-6 space-y-2.5 text-xs font-semibold text-slate-700">
+              <li class="flex items-center gap-2"><span class="text-teal font-black">✓</span> Automated Quotation Generation</li>
+              <li class="flex items-center gap-2"><span class="text-teal font-black">✓</span> Multi-User Role-based Access</li>
+              <li class="flex items-center gap-2"><span class="text-teal font-black">✓</span> Mobile-First Responsive Layouts</li>
+            </ul>
+            <a href="#enquire" data-service="Custom Web Apps" class="quick-enquire-btn mt-8 inline-flex w-full items-center justify-center rounded-xl bg-navy py-3 text-xs font-bold text-white transition hover:bg-teal">Request Web Portal Demo →</a>
+          </div>
 
-          <article class="service-card">
-            <div class="service-icon bg-navy text-white">⌘</div>
-            <h3>Custom Web Apps</h3>
-            <p>Responsive business applications backed by Sheets, databases or APIs.</p>
-            <ul><li>CRM & MIS</li><li>Inventory systems</li><li>Quotation portals</li></ul>
-          </article>
+          <!-- Product: Tender Documentation Packs -->
+          <div class="group relative rounded-3xl border border-slate-200 bg-slate-50/40 p-8 shadow-sm transition-all hover:-translate-y-1 hover:border-teal hover:bg-white hover:shadow-xl md:col-span-2 lg:col-span-1">
+            <div class="grid h-14 w-14 place-items-center rounded-2xl bg-amber-50 text-2xl font-bold text-amber-600">📁</div>
+            <div class="mt-6 inline-flex rounded-full bg-amber-100/80 px-3 py-1 text-[11px] font-extrabold text-amber-800">READY-TO-USE</div>
+            <h3 class="mt-3 text-xl font-extrabold text-navy">Tender Tracking & Checklist Kits</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">Standardized spreadsheet systems configured with automatic deadline countdowns, compliance matrices, and EMD/PBG management.</p>
+            <ul class="mt-6 space-y-2.5 text-xs font-semibold text-slate-700">
+              <li class="flex items-center gap-2"><span class="text-teal font-black">✓</span> Centralized Document Repositories</li>
+              <li class="flex items-center gap-2"><span class="text-teal font-black">✓</span> Real-Time Expiry & Bid Alerts</li>
+              <li class="flex items-center gap-2"><span class="text-teal font-black">✓</span> Pre-Formatted BOQ Estimators</li>
+            </ul>
+            <a href="#enquire" data-service="Tender & GeM Services" class="quick-enquire-btn mt-8 inline-flex w-full items-center justify-center rounded-xl bg-navy py-3 text-xs font-bold text-white transition hover:bg-teal">Get Starter Kit →</a>
+          </div>
 
-          <article class="service-card">
-            <div class="service-icon bg-amber-50 text-amber-700">✓</div>
-            <h3>Tender & GeM Support</h3>
-            <p>Organize tender workflows, documents, compliance tracking and reminders.</p>
-            <ul><li>Tender tracking</li><li>Document control</li><li>Deadline alerts</li></ul>
-          </article>
         </div>
       </div>
     </section>
 
-    <!-- AUTOMATION -->
-    <section id="automation" class="bg-slate-50 py-20 lg:py-24">
+    <!-- SERVICES SECTION -->
+    <section id="services" class="border-t border-slate-200 bg-slate-50 py-20 lg:py-24">
       <div class="mx-auto max-w-7xl px-5 lg:px-8">
-        <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
-          <div>
-            <span class="section-kicker">AUTOMATION FIRST</span>
-            <h2 class="section-title">From spreadsheet chaos to a controlled workflow.</h2>
-            <p class="section-copy">We connect the tools you already use and add automation where it creates the most value.</p>
+        <div class="text-center max-w-2xl mx-auto">
+          <span class="text-xs font-black uppercase tracking-widest text-teal">CORE SERVICES</span>
+          <h2 class="mt-2 text-3xl font-extrabold tracking-tight text-navy sm:text-4xl">Engineered for Accuracy & Speed</h2>
+          <p class="mt-3 text-base text-slate-600">From custom web development to automated spreadsheet pipelines, we eliminate workflow friction.</p>
+        </div>
+
+        <div class="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          
+          <!-- Web Design Service -->
+          <div class="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition hover:shadow-xl hover:border-teal flex flex-col justify-between">
+            <div>
+              <div class="grid h-12 w-12 place-items-center rounded-xl bg-indigo-50 text-xl font-bold text-indigo-600">🌐</div>
+              <h3 class="mt-5 text-lg font-extrabold text-navy">Web Design & UI</h3>
+              <p class="mt-2 text-xs leading-relaxed text-slate-600">Modern, fast, and SEO-optimized websites built to convert visitors into tender inquiries and clients.</p>
+              <ul class="mt-5 space-y-2 text-xs font-semibold text-slate-700">
+                <li class="flex items-center gap-1.5"><span class="text-teal">✓</span> Single-Page & Corporate Sites</li>
+                <li class="flex items-center gap-1.5"><span class="text-teal">✓</span> Mobile-Adaptive UI/UX</li>
+                <li class="flex items-center gap-1.5"><span class="text-teal">✓</span> WhatsApp / Lead Integration</li>
+              </ul>
+            </div>
+            <a href="#enquire" data-service="Web Design & UI Development" class="quick-enquire-btn mt-6 text-xs font-bold text-teal hover:text-navy">Inquire for Web Design →</a>
+          </div>
+
+          <!-- Google Sheets Service -->
+          <div class="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition hover:shadow-xl hover:border-teal flex flex-col justify-between">
+            <div>
+              <div class="grid h-12 w-12 place-items-center rounded-xl bg-emerald-50 text-xl font-bold text-emerald-600">▦</div>
+              <h3 class="mt-5 text-lg font-extrabold text-navy">Google Sheets & Apps Script</h3>
+              <p class="mt-2 text-xs leading-relaxed text-slate-600">Transform everyday spreadsheets into scalable ERPs, automated mailers, and custom API sync tools.</p>
+              <ul class="mt-5 space-y-2 text-xs font-semibold text-slate-700">
+                <li class="flex items-center gap-1.5"><span class="text-teal">✓</span> Automated PDF Invoices/Quotes</li>
+                <li class="flex items-center gap-1.5"><span class="text-teal">✓</span> WhatsApp & Gmail Alerts</li>
+                <li class="flex items-center gap-1.5"><span class="text-teal">✓</span> Dynamic Dashboards & Pivot Tools</li>
+              </ul>
+            </div>
+            <a href="#enquire" data-service="Google Sheets & Apps Script" class="quick-enquire-btn mt-6 text-xs font-bold text-teal hover:text-navy">Automate with Sheets →</a>
+          </div>
+
+          <!-- Excel VBA Service -->
+          <div class="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition hover:shadow-xl hover:border-teal flex flex-col justify-between">
+            <div>
+              <div class="grid h-12 w-12 place-items-center rounded-xl bg-amber-50 text-xl font-bold text-amber-600">▤</div>
+              <h3 class="mt-5 text-lg font-extrabold text-navy">MS Excel & Advanced VBA</h3>
+              <p class="mt-2 text-xs leading-relaxed text-slate-600">Clean up millions of rows, eliminate manual copy-paste errors, and execute complex business logic.</p>
+              <ul class="mt-5 space-y-2 text-xs font-semibold text-slate-700">
+                <li class="flex items-center gap-1.5"><span class="text-teal">✓</span> 1-Click VBA Macros</li>
+                <li class="flex items-center gap-1.5"><span class="text-teal">✓</span> Complex Multi-File Merges</li>
+                <li class="flex items-center gap-1.5"><span class="text-teal">✓</span> Custom Financial Formulas</li>
+              </ul>
+            </div>
+            <a href="#enquire" data-service="MS Excel & VBA" class="quick-enquire-btn mt-6 text-xs font-bold text-teal hover:text-navy">Build Excel Automation →</a>
+          </div>
+
+          <!-- Tender & GeM Support -->
+          <div class="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition hover:shadow-xl hover:border-teal flex flex-col justify-between">
+            <div>
+              <div class="grid h-12 w-12 place-items-center rounded-xl bg-sky/15 text-xl font-bold text-navy">✓</div>
+              <h3 class="mt-5 text-lg font-extrabold text-navy">Tender & GeM Support</h3>
+              <p class="mt-2 text-xs leading-relaxed text-slate-600">Professional assistance for government portal registrations, bid documentation, and vendor catalogs.</p>
+              <ul class="mt-5 space-y-2 text-xs font-semibold text-slate-700">
+                <li class="flex items-center gap-1.5"><span class="text-teal">✓</span> GeM Profile & Brand Approval</li>
+                <li class="flex items-center gap-1.5"><span class="text-teal">✓</span> Technical Bid Compliance</li>
+                <li class="flex items-center gap-1.5"><span class="text-teal">✓</span> E-Tender Portal Setup</li>
+              </ul>
+            </div>
+            <a href="#enquire" data-service="Tender & GeM Services" class="quick-enquire-btn mt-6 text-xs font-bold text-teal hover:text-navy">Get GeM Support →</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- AUTOMATION WORKFLOW -->
+    <section id="automation" class="bg-white py-20 lg:py-24">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="grid gap-12 lg:grid-cols-12 lg:items-center">
+          <div class="lg:col-span-6">
+            <span class="text-xs font-black uppercase tracking-widest text-teal">HOW IT RUNS</span>
+            <h2 class="mt-2 text-3xl font-extrabold tracking-tight text-navy sm:text-4xl">One unified pipeline for all your bid & business data.</h2>
+            <p class="mt-4 text-base text-slate-600">Stop sending spreadsheets across email attachments. We build centralized systems where actions trigger automatically.</p>
 
             <div class="mt-8 space-y-4">
-              <div class="feature-row"><span class="feature-check">✓</span><div><strong>Centralized data</strong><p>One reliable source instead of multiple versions of the same file.</p></div></div>
-              <div class="feature-row"><span class="feature-check">✓</span><div><strong>Automatic calculations</strong><p>Reduce manual formulas, copy-paste and repetitive data entry.</p></div></div>
-              <div class="feature-row"><span class="feature-check">✓</span><div><strong>Alerts & reminders</strong><p>Never miss a tender deadline, follow-up or important task.</p></div></div>
-              <div class="feature-row"><span class="feature-check">✓</span><div><strong>Management dashboards</strong><p>Get real-time visibility into sales, tenders and operations.</p></div></div>
+              <div class="flex gap-4">
+                <div class="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-teal/10 font-bold text-teal">1</div>
+                <div>
+                  <h4 class="text-sm font-bold text-navy">Single Data Ingestion</h4>
+                  <p class="text-xs text-slate-500">Tenders, leads, and orders are captured once via Web Form or Google Sheets.</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-teal/10 font-bold text-teal">2</div>
+                <div>
+                  <h4 class="text-sm font-bold text-navy">Automated Triggers</h4>
+                  <p class="text-xs text-slate-500">Instant PDF generation, WhatsApp team alerts, and calendar notifications fire in real time.</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-teal/10 font-bold text-teal">3</div>
+                <div>
+                  <h4 class="text-sm font-bold text-navy">Live Management Insights</h4>
+                  <p class="text-xs text-slate-500">Track pending bids, revenue projections, and operational KPIs on a centralized dashboard.</p>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div class="rounded-[2rem] border border-slate-200 bg-white p-5 shadow-card sm:p-8">
-            <div class="mb-6 flex items-center justify-between">
-              <div><div class="text-xs font-bold uppercase tracking-wider text-slate-400">Example workflow</div><div class="text-lg font-extrabold text-navy">Tender → Order → MIS</div></div>
-              <span class="rounded-lg bg-teal/10 px-3 py-2 text-xs font-bold text-teal">AUTOMATED</span>
-            </div>
+          <div class="lg:col-span-6">
+            <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6 sm:p-8 shadow-inner">
+              <div class="space-y-4">
+                <div class="flex items-center justify-between rounded-2xl bg-white p-4 shadow-sm border border-slate-200/80">
+                  <div class="flex items-center gap-3">
+                    <span class="text-xl">📩</span>
+                    <div>
+                      <div class="text-xs font-bold text-navy">Lead Captured on Website</div>
+                      <div class="text-[10px] text-slate-400">Via Dynamic Web Form</div>
+                    </div>
+                  </div>
+                  <span class="rounded-md bg-teal/10 px-2 py-1 text-[10px] font-black text-teal">TRIGGER</span>
+                </div>
 
-            <div class="space-y-3">
-              <div class="pipeline-item"><span class="pipeline-number">01</span><div><strong>Tender captured</strong><p>Details entered once into Google Sheets.</p></div><span class="pipeline-status">Done</span></div>
-              <div class="pipeline-item"><span class="pipeline-number">02</span><div><strong>Documents tracked</strong><p>Missing documents and deadlines are flagged.</p></div><span class="pipeline-status">Done</span></div>
-              <div class="pipeline-item"><span class="pipeline-number">03</span><div><strong>Quotation generated</strong><p>Pricing and technical data flow into the template.</p></div><span class="pipeline-status">Done</span></div>
-              <div class="pipeline-item"><span class="pipeline-number">04</span><div><strong>MIS updated</strong><p>Management dashboard refreshes automatically.</p></div><span class="pipeline-status">Live</span></div>
+                <div class="flex justify-center text-slate-400">↓</div>
+
+                <div class="flex items-center justify-between rounded-2xl bg-white p-4 shadow-sm border border-slate-200/80">
+                  <div class="flex items-center gap-3">
+                    <span class="text-xl">📊</span>
+                    <div>
+                      <div class="text-xs font-bold text-navy">Google Apps Script Processes Entry</div>
+                      <div class="text-[10px] text-slate-400">Appends to 'Enquiries' Sheet & validates data</div>
+                    </div>
+                  </div>
+                  <span class="rounded-md bg-sky/20 px-2 py-1 text-[10px] font-black text-navy">AUTOMATED</span>
+                </div>
+
+                <div class="flex justify-center text-slate-400">↓</div>
+
+                <div class="flex items-center justify-between rounded-2xl bg-white p-4 shadow-sm border border-slate-200/80">
+                  <div class="flex items-center gap-3">
+                    <span class="text-xl">🔔</span>
+                    <div>
+                      <div class="text-xs font-bold text-navy">Instant Alerts & Follow-up</div>
+                      <div class="text-[10px] text-slate-400">WhatsApp message dispatched to sales team</div>
+                    </div>
+                  </div>
+                  <span class="rounded-md bg-emerald-100 px-2 py-1 text-[10px] font-black text-emerald-700">COMPLETED</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PROCESS -->
-    <section id="process" class="bg-white py-20 lg:py-24">
-      <div class="mx-auto max-w-7xl px-5 lg:px-8">
-        <div class="text-center">
-          <span class="section-kicker">OUR PROCESS</span>
-          <h2 class="section-title mx-auto">Simple from requirement to rollout.</h2>
-          <p class="section-copy mx-auto">No unnecessary complexity. We understand your process first, then build around it.</p>
-        </div>
-
-        <div class="mt-12 grid gap-5 md:grid-cols-4">
-          <div class="process-card"><span>01</span><h3>Understand</h3><p>Map your current process, data and pain points.</p></div>
-          <div class="process-card"><span>02</span><h3>Design</h3><p>Create the workflow, screens and data structure.</p></div>
-          <div class="process-card"><span>03</span><h3>Build</h3><p>Develop automation, web app and integrations.</p></div>
-          <div class="process-card"><span>04</span><h3>Improve</h3><p>Test, deploy and continuously refine the workflow.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT / CTA -->
+    <!-- ABOUT SECTION -->
     <section id="about" class="bg-navy py-20 text-white lg:py-24">
-      <div class="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-[1.2fr_.8fr] lg:items-center lg:px-8">
-        <div>
-          <span class="text-xs font-bold uppercase tracking-[.2em] text-sky">PRIMETENDERS.IN</span>
-          <h2 class="mt-4 max-w-3xl text-3xl font-extrabold tracking-tight sm:text-4xl">Technology that fits your business — not the other way around.</h2>
-          <p class="mt-5 max-w-2xl text-lg leading-8 text-slate-300">Whether you need a Google Sheets automation, Excel solution, tender management system or a complete business web app, we can build it around your actual workflow.</p>
+      <div class="mx-auto max-w-7xl px-5 lg:px-8 grid gap-12 lg:grid-cols-12 lg:items-center">
+        <div class="lg:col-span-7">
+          <span class="text-xs font-black uppercase tracking-widest text-sky">ABOUT PRIMETENDERS.IN</span>
+          <h2 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">Empowering enterprise agility with smart code & compliant tools.</h2>
+          <p class="mt-5 text-base leading-relaxed text-slate-300">
+            Headquartered in Chennai and serving businesses across India, PrimeTenders combines 15+ years of tender procurement expertise with modern cloud automation. We bridge the gap between complex government compliance and straightforward digital execution.
+          </p>
         </div>
-        <div class="rounded-3xl bg-white/10 p-7 ring-1 ring-white/10">
-          <div class="text-sm font-semibold text-slate-300">Ready to automate?</div>
-          <div class="mt-2 text-2xl font-extrabold">Let's discuss your requirement.</div>
-          <a href="#enquire" class="mt-6 inline-flex rounded-xl bg-teal px-5 py-3 font-bold text-white transition hover:bg-[#20a79f]">Start a Conversation →</a>
+        <div class="lg:col-span-5 rounded-3xl bg-white/10 p-8 ring-1 ring-white/15 backdrop-blur-md">
+          <h3 class="text-xl font-bold">Need a bespoke solution?</h3>
+          <p class="mt-2 text-xs text-slate-300">Tell us your current bottlenecks. We'll design a customized roadmap for your business.</p>
+          <a href="#enquire" class="mt-6 inline-flex w-full items-center justify-center rounded-xl bg-teal py-3.5 text-sm font-bold text-white shadow-lg transition hover:bg-tealLight">Talk to an Expert →</a>
         </div>
       </div>
     </section>
 
-    <!-- ENQUIRE -->
+    <!-- ENQUIRY SECTION -->
     <section id="enquire" class="bg-slate-50 py-20 lg:py-24">
       <div class="mx-auto max-w-7xl px-5 lg:px-8">
-        <div class="grid gap-10 lg:grid-cols-[.8fr_1.2fr]">
-          <div>
-            <span class="section-kicker">GET IN TOUCH</span>
-            <h2 class="section-title">Let's discuss your requirement.</h2>
-            <p class="section-copy">Tell us what you are doing manually today. We'll help identify what can be automated.</p>
+        <div class="grid gap-12 lg:grid-cols-12">
+          
+          <!-- Contact Details -->
+          <div class="lg:col-span-5">
+            <span class="text-xs font-black uppercase tracking-widest text-teal">CONTACT US</span>
+            <h2 class="mt-2 text-3xl font-extrabold tracking-tight text-navy sm:text-4xl">Let's build your next system.</h2>
+            <p class="mt-3 text-sm text-slate-600">Fill in your requirement below and we will get back to you with a clear timeline and quotation.</p>
 
             <div class="mt-8 space-y-4">
-              <a href="https://wa.me/918148147577" class="contact-link"><span class="contact-badge bg-blue-50 text-blue-700">◧</span><span><strong>WhatsApp Support</strong><small>+91 814 814 7577</small></span></a>
-              <a href="mailto:vijaynewmailbox@gmail.com" class="contact-link"><span class="contact-badge bg-teal/10 text-teal">✉</span><span><strong>Email Us</strong><small>vijaynewmailbox@gmail.com</small></span></a>
-              <div class="contact-link"><span class="contact-badge bg-slate-100 text-navy">⌖</span><span><strong>Headquarters</strong><small>Based in Chennai, Serving India</small></span></div>
+              <a href="https://wa.me/918148147577" target="_blank" rel="noopener noreferrer" class="contact-card">
+                <div class="contact-icon bg-emerald-50 text-emerald-600">💬</div>
+                <div>
+                  <div class="text-xs font-bold text-navy">WhatsApp Support</div>
+                  <div class="text-sm font-bold text-slate-600">+91 814 814 7577</div>
+                </div>
+              </a>
+
+              <a href="mailto:vijaynewmailbox@gmail.com" class="contact-card">
+                <div class="contact-icon bg-sky/15 text-navy">✉</div>
+                <div>
+                  <div class="text-xs font-bold text-navy">Email Us</div>
+                  <div class="text-sm font-bold text-slate-600">vijaynewmailbox@gmail.com</div>
+                </div>
+              </a>
+
+              <div class="contact-card">
+                <div class="contact-icon bg-indigo-50 text-indigo-600">📍</div>
+                <div>
+                  <div class="text-xs font-bold text-navy">Location</div>
+                  <div class="text-sm font-bold text-slate-600">Chennai, Tamil Nadu, India</div>
+                </div>
+              </div>
             </div>
           </div>
 
-          <form id="enquiryForm" class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft sm:p-8">
-            <div class="grid gap-5 sm:grid-cols-2">
-              <div><label>Name</label><input name="name" placeholder="Your Full Name"></div>
-              <div><label>Company Name</label><input name="company" placeholder="Your Company"></div>
-              <div><label>Mobile / WhatsApp <em>*</em></label><input name="mobile" type="tel" required placeholder="+91 00000 00000"></div>
-              <div><label>Email Address</label><input name="email" type="email" placeholder="you@company.com"></div>
-              <div class="sm:col-span-2"><label>Service Required</label>
-                <select name="service">
-                  <option value="">Select a service...</option>
-                  <option>Google Sheets & Apps Script</option>
-                  <option>MS Excel & VBA</option>
-                  <option>Custom Web Apps</option>
-                  <option>Tender & GeM Services</option>
-                  <option>Other</option>
-                </select>
+          <!-- Dynamic Form -->
+          <div class="lg:col-span-7">
+            <form id="enquiryForm" class="rounded-3xl border border-slate-200 bg-white p-7 shadow-xl sm:p-10">
+              <div class="grid gap-5 sm:grid-cols-2">
+                <div>
+                  <label for="nameInput">Full Name</label>
+                  <input id="nameInput" name="name" placeholder="John Doe">
+                </div>
+                <div>
+                  <label for="companyInput">Company Name</label>
+                  <input id="companyInput" name="company" placeholder="Enterprise / Firm Ltd.">
+                </div>
+                <div>
+                  <label for="mobileInput">Mobile / WhatsApp <em>*</em></label>
+                  <input id="mobileInput" name="mobile" type="tel" required placeholder="+91 98765 43210">
+                </div>
+                <div>
+                  <label for="emailInput">Email Address</label>
+                  <input id="emailInput" name="email" type="email" placeholder="name@company.com">
+                </div>
+                <div class="sm:col-span-2">
+                  <label for="serviceSelect">Select Required Service / Product</label>
+                  <select id="serviceSelect" name="service">
+                    <option value="">Choose an option...</option>
+                    <option value="Digital Signature Certificate (DSC)">Digital Signature Certificate (DSC - Class 3)</option>
+                    <option value="Web Design & UI Development">Web Design & UI Development</option>
+                    <option value="Google Sheets & Apps Script">Google Sheets & Apps Script Automation</option>
+                    <option value="MS Excel & VBA">MS Excel & VBA Macro Solutions</option>
+                    <option value="Custom Web Apps">Custom Web Applications</option>
+                    <option value="Tender & GeM Services">Tender & GeM Consultation</option>
+                    <option value="Other">Other Custom Inquiry</option>
+                  </select>
+                </div>
+                <div class="sm:col-span-2">
+                  <label for="detailsInput">Requirement Details</label>
+                  <textarea id="detailsInput" name="details" rows="4" placeholder="Briefly describe what you'd like to achieve..."></textarea>
+                </div>
+                <div class="sm:col-span-2">
+                  <button id="submitBtn" type="submit" class="w-full rounded-xl bg-navy py-4 text-sm font-bold text-white shadow-lg shadow-navy/20 transition-all hover:bg-teal hover:-translate-y-0.5">
+                    Send Enquiry <span class="ml-1">→</span>
+                  </button>
+                  <p id="formStatus" class="mt-3 min-h-[1.25rem] text-center text-xs font-bold" aria-live="polite"></p>
+                </div>
               </div>
-              <div class="sm:col-span-2"><label>Requirement Details</label><textarea name="details" rows="5" placeholder="Please describe your specific requirements..."></textarea></div>
-              <div class="sm:col-span-2">
-                <button id="submitBtn" type="submit" class="w-full rounded-xl bg-navy px-6 py-3.5 font-bold text-white shadow-lg shadow-navy/15 transition hover:-translate-y-0.5 hover:bg-navy2">Send Enquiry <span class="ml-1">→</span></button>
-                <p id="formStatus" class="mt-3 min-h-5 text-sm" aria-live="polite"></p>
-              </div>
-            </div>
-          </form>
+            </form>
+          </div>
+
         </div>
       </div>
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="border-t border-slate-200 bg-white">
-    <div class="mx-auto flex max-w-7xl flex-col gap-3 px-5 py-7 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between lg:px-8">
-      <div><strong class="text-navy">PrimeTenders.in</strong> — Automation & Tender Solutions</div>
-      <div>© &copy;<span id="year"></span> PrimeTenders.in. All rights reserved.</div>
+    <div class="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-8 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between lg:px-8">
+      <div>
+        <strong class="text-navy">PrimeTenders.in</strong> — Smart Workflows & Digital Procurement Solutions.
+      </div>
+      <div>
+        © <span id="year"></span> PrimeTenders.in. All rights reserved.
+      </div>
     </div>
   </footer>
 

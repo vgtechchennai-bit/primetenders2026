@@ -602,5 +602,92 @@
 
   <script src="config.js"></script>
   <script src="app.js"></script>
+
+  <script>
+
+const GOOGLE_SCRIPT_URL =
+"https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec";
+
+
+document.getElementById("enquiryForm").addEventListener("submit", async function(e) {
+
+    e.preventDefault();
+
+    const form = this;
+    const submitBtn = document.getElementById("submitBtn");
+    const formStatus = document.getElementById("formStatus");
+
+    // Collect form data
+    const data = {
+        name: document.getElementById("nameInput").value.trim(),
+        company: document.getElementById("companyInput").value.trim(),
+        mobile: document.getElementById("mobileInput").value.trim(),
+        email: document.getElementById("emailInput").value.trim(),
+        service: document.getElementById("serviceSelect").value,
+        details: document.getElementById("detailsInput").value.trim()
+    };
+
+    // Basic validation
+    if (!data.mobile) {
+
+        formStatus.textContent = "Please enter your mobile / WhatsApp number.";
+        formStatus.className =
+            "mt-3 min-h-[1.25rem] text-center text-xs font-bold text-red-600";
+
+        return;
+    }
+
+    // Disable button
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = "Sending...";
+
+    formStatus.textContent = "";
+
+    try {
+
+        const response = await fetch(GOOGLE_SCRIPT_URL, {
+            method: "POST",
+            body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+
+            formStatus.textContent =
+                "Thank you! Your enquiry has been submitted successfully.";
+
+            formStatus.className =
+                "mt-3 min-h-[1.25rem] text-center text-xs font-bold text-green-600";
+
+            // Clear form
+            form.reset();
+
+        } else {
+
+            throw new Error(result.error || "Submission failed");
+
+        }
+
+    } catch (error) {
+
+        console.error("Form submission error:", error);
+
+        formStatus.textContent =
+            "Unable to submit your enquiry. Please try again or contact us on WhatsApp.";
+
+        formStatus.className =
+            "mt-3 min-h-[1.25rem] text-center text-xs font-bold text-red-600";
+
+    }
+
+    // Enable button again
+    submitBtn.disabled = false;
+    submitBtn.innerHTML =
+        'Send Enquiry <span class="ml-1">→</span>';
+
+});
+
+</script>
 </body>
 </html>

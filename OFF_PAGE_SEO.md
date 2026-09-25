@@ -7,14 +7,14 @@ The website can support off-page SEO, but authority comes from real mentions, re
 1. **Google Business Profile**
    - Create or verify a profile for PrimeTenders.in using the real business name, phone number, service area and Chennai location.
    - Add the primary category that accurately describes the business and secondary categories only when eligible.
-   - Add the website, WhatsApp contact and the `/dsc-vendor-chennai/` page as the relevant service URL.
+   - Add the website, WhatsApp contact and the `/dsc-vendor-chennai.html` page as the relevant service URL.
    - Upload genuine office, team or service images. Do not use stock images as proof of location.
    - Ask real customers for honest reviews after completing DSC or tender support. Never offer incentives for positive reviews.
 
 2. **Local and industry citations**
    - Keep the same business name, address, phone and website on legitimate Chennai and Tamil Nadu business directories.
    - Prefer procurement, compliance, accounting, MSME and local business associations that are relevant to the service.
-   - Use the most relevant page as the citation target: `/dsc/`, `/dsc-vendor-chennai/` or `/dsc-for-e-tendering/`.
+   - Use the most relevant page as the citation target: `/class-3-dsc.html`, `/dsc-vendor-chennai.html` or `/dsc-e-tendering.html`.
 
 3. **Useful partner links**
    - Ask existing clients, CA firms, tender consultants, IT support companies and business associations to reference the DSC checklist or e-tendering guide when it genuinely helps their audience.
@@ -23,7 +23,7 @@ The website can support off-page SEO, but authority comes from real mentions, re
 4. **Social distribution**
    - Share the DSC guide in relevant LinkedIn posts, WhatsApp business updates, Facebook business posts and local professional communities.
    - Use one topic per post: DSC documents, token setup, e-tendering readiness or Chennai vendor support.
-   - Link to the matching page and use the built-in share links on `/dsc/`.
+   - Link to the matching page and use the built-in share links on `/class-3-dsc.html`.
    - Avoid repetitive keyword stuffing. Explain one practical problem and link to the detailed guide.
 
 5. **Measure monthly**
@@ -34,10 +34,10 @@ The website can support off-page SEO, but authority comes from real mentions, re
 
 ## Suggested post topics
 
-- “Documents to keep ready before applying for a Class 3 DSC” -> `/dsc-purchase-documents/`
-- “How to test a DSC before an e-tender deadline” -> `/dsc-for-e-tendering/`
-- “What to ask a DSC vendor in Chennai” -> `/dsc-vendor-chennai/`
-- “Signing vs signing and encryption: what should a bidder check?” -> `/dsc/`
+- “Documents to keep ready before applying for a Class 3 DSC” -> `/dsc-purchase-documents.html`
+- “How to test a DSC before an e-tender deadline” -> `/dsc-e-tendering.html`
+- “What to ask a DSC vendor in Chennai” -> `/dsc-vendor-chennai.html`
+- “Signing vs signing and encryption: what should a bidder check?” -> `/class-3-dsc.html`
 
 ## Important
 

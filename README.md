@@ -38,4 +38,4 @@ This version uses Tailwind through the CDN for easy deployment and editing. For 
 Works on Netlify, GitHub Pages, any static hosting, or can be adapted into Google Apps Script HTML Service.
 
 ## SEO
-The DSC content cluster includes `/dsc/`, `/dsc-vendor-chennai/`, `/dsc-purchase-documents/`, and `/dsc-for-e-tendering/`. See [OFF_PAGE_SEO.md](OFF_PAGE_SEO.md) for the legitimate backlink, local listing, review, social distribution and measurement checklist.
+The DSC content cluster uses root-level pages for simple GitHub Pages hosting: `class-3-dsc.html`, `dsc-vendor-chennai.html`, `dsc-purchase-documents.html`, and `dsc-e-tendering.html`. See [OFF_PAGE_SEO.md](OFF_PAGE_SEO.md) for the legitimate backlink, local listing, review, social distribution and measurement checklist.

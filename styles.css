@@ -8,6 +8,91 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Purple night theme. The class lives on html so the preference is applied before paint. */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 10px 13px;
+  background: #ffffff;
+  color: #0f274a;
+  font-size: 12px;
+  font-weight: 700;
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+}
+
+.theme-toggle:hover { border-color: #8b5cf6; background: #f5f3ff; color: #6d28d9; }
+.theme-toggle-icon { font-size: 17px; line-height: 1; }
+
+html.dark-theme body { background: #110d1d !important; color: #d8d1e6 !important; }
+html.dark-theme .bg-white { background-color: #1c1629 !important; }
+html.dark-theme .bg-slate-50 { background-color: #151022 !important; }
+html.dark-theme .bg-slate-100 { background-color: #211932 !important; }
+html.dark-theme .text-slate-700 { color: #d8d1e6 !important; }
+html.dark-theme .text-slate-600 { color: #b9afca !important; }
+html.dark-theme .text-slate-500 { color: #9f94b2 !important; }
+html.dark-theme .text-slate-400 { color: #8e829f !important; }
+html.dark-theme .text-navy { color: #f2edff !important; }
+html.dark-theme .border-slate-200,
+html.dark-theme .border-slate-200\/80,
+html.dark-theme .border-slate-100 { border-color: #3a2d50 !important; }
+html.dark-theme .shadow-sm,
+html.dark-theme .shadow-xl { box-shadow: 0 14px 35px rgba(0, 0, 0, 0.28) !important; }
+html.dark-theme .bg-navy { background-color: #302052 !important; }
+html.dark-theme .bg-teal { background-color: #8b5cf6 !important; }
+html.dark-theme .text-teal { color: #c4b5fd !important; }
+html.dark-theme .hover\:text-navy:hover { color: #f2edff !important; }
+html.dark-theme .hover\:bg-slate-100:hover { background-color: #2a2040 !important; }
+html.dark-theme header { background-color: rgba(28, 22, 41, 0.95) !important; border-color: #3a2d50 !important; }
+html.dark-theme .dropdown-panel { background: #211932 !important; border-color: #4b3968 !important; }
+html.dark-theme .dropdown-link:hover { background: #302052 !important; }
+html.dark-theme .mobile-nav-link { color: #eee8fa !important; }
+html.dark-theme .prime-hero { background: #171128; }
+html.dark-theme .prime-hero-grid { background-image: linear-gradient(rgba(196, 181, 253, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(196, 181, 253, 0.08) 1px, transparent 1px); }
+html.dark-theme .prime-kicker { background: rgba(139, 92, 246, 0.16); color: #c4b5fd; }
+html.dark-theme .prime-display span { color: #d8b4fe; }
+html.dark-theme .prime-service-rail { border-color: #4b3968; }
+html.dark-theme .prime-service-rail > div { border-color: #4b3968; }
+html.dark-theme .prime-service-rail strong { color: #f2edff; }
+html.dark-theme .prime-service-rail small { color: #a99cba; }
+html.dark-theme .prime-image-band,
+html.dark-theme .prime-image-strip { background: #1c1629; }
+html.dark-theme .contact-card { background-color: #211932; border-color: #4b3968; }
+html.dark-theme .contact-card .text-navy { color: #f2edff !important; }
+html.dark-theme .contact-card .text-slate-600 { color: #d8d1e6 !important; }
+html.dark-theme .bg-slate-50\/40 { background-color: #211932 !important; }
+html.dark-theme #products .bg-rose-50\/40 { background-color: #211932 !important; }
+html.dark-theme #products .border-rose-200 { border-color: #3a2d50 !important; }
+html.dark-theme #products .hover\:border-rose-400:hover { border-color: #a78bfa !important; }
+html.dark-theme .hover\:bg-white:hover { background-color: #211932 !important; }
+html.dark-theme .hover\:border-teal:hover { border-color: #a78bfa !important; }
+html.dark-theme .group:hover .text-navy { color: #f2edff !important; }
+html.dark-theme .subpage-hero { background-color: #302052; background-image: linear-gradient(120deg, rgba(17, 13, 29, 0.94), rgba(91, 33, 182, 0.72)), url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1600&q=85'); }
+html.dark-theme .subpage-hero-light { color: #f2edff; background-color: #211932; background-image: linear-gradient(120deg, rgba(33, 25, 50, 0.94), rgba(76, 29, 149, 0.7)), url('https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1600&q=85'); }
+html.dark-theme .subpage-heading { color: #f2edff; }
+html.dark-theme .guide-list > div { border-color: #3a2d50; }
+html.dark-theme .guide-card { border-color: #4b3968; background: #211932; }
+html.dark-theme .guide-card b { color: #f2edff; }
+html.dark-theme .guide-card p { color: #b9afca; }
+html.dark-theme footer { background-color: #1c1629 !important; border-color: #3a2d50 !important; }
+html.dark-theme input,
+html.dark-theme select,
+html.dark-theme textarea { background: #211932; border-color: #4b3968; color: #f2edff; }
+html.dark-theme #enquiryForm { background-color: #1c1629 !important; border-color: #3a2d50 !important; }
+html.dark-theme #enquiryForm label { color: #e9ddff; }
+html.dark-theme #enquiryForm input,
+html.dark-theme #enquiryForm select,
+html.dark-theme #enquiryForm textarea { background-color: #211932 !important; border-color: #5b4380 !important; color: #f2edff !important; }
+html.dark-theme #enquiryForm input:focus,
+html.dark-theme #enquiryForm select:focus,
+html.dark-theme #enquiryForm textarea:focus { border-color: #a78bfa !important; box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.2); }
+html.dark-theme input::placeholder,
+html.dark-theme textarea::placeholder { color: #8e829f; }
+html.dark-theme .theme-toggle { background: #211932; border-color: #5b4380; color: #e9ddff; }
+html.dark-theme .theme-toggle:hover { background: #302052; border-color: #a78bfa; color: #ddd6fe; }
+
 /* Purpose-first hero: a visual map of the three services. */
 .prime-hero {
   min-height: 760px;

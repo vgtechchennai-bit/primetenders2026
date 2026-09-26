@@ -10,6 +10,27 @@ document.querySelectorAll('#mobileMenu a').forEach(link => {
   link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
 });
 
+// Persist the user's colour theme across visits.
+const themeToggles = document.querySelectorAll('#themeToggle, #mobileThemeToggle');
+const updateThemeToggle = () => {
+  const isDark = document.documentElement.classList.contains('dark-theme');
+  themeToggles.forEach(toggle => {
+    toggle.setAttribute('aria-pressed', String(isDark));
+    toggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+    toggle.querySelector('.theme-toggle-icon').textContent = isDark ? '☀' : '☾';
+    toggle.querySelector('.theme-toggle-label').textContent = isDark ? 'Light mode' : 'Dark mode';
+  });
+};
+
+themeToggles.forEach(toggle => {
+  toggle.addEventListener('click', () => {
+    const isDark = document.documentElement.classList.toggle('dark-theme');
+    localStorage.setItem('primetenders-theme', isDark ? 'dark' : 'light');
+    updateThemeToggle();
+  });
+});
+updateThemeToggle();
+
 // Dynamic year in footer[cite: 2]
 document.getElementById('year').textContent = new Date().getFullYear();
 

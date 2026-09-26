@@ -108,6 +108,9 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script>
+    if (localStorage.getItem('primetenders-theme') === 'dark') document.documentElement.classList.add('dark-theme');
+  </script>
 </head>
 
 <body class="bg-slate-50 font-['DM_Sans',sans-serif] text-slate-700 antialiased selection:bg-teal selection:text-white">
@@ -207,6 +210,9 @@
 
       <!-- Desktop Actions -->
       <div class="hidden items-center gap-3 sm:flex">
+        <button id="themeToggle" type="button" class="theme-toggle" aria-label="Switch to dark mode" aria-pressed="false">
+          <span class="theme-toggle-icon" aria-hidden="true">☾</span><span class="theme-toggle-label">Dark mode</span>
+        </button>
         <a href="tel:+918148147577" class="rounded-xl px-4 py-2.5 text-sm font-bold text-navy hover:bg-slate-100 transition">
           +91 814 814 7577
         </a>
@@ -248,6 +254,9 @@
 
         <a href="#automation" class="mobile-nav-link">Automation Flow</a>
         <a href="#about" class="mobile-nav-link">About Company</a>
+        <button id="mobileThemeToggle" type="button" class="theme-toggle w-full justify-center" aria-label="Switch to dark mode" aria-pressed="false">
+          <span class="theme-toggle-icon" aria-hidden="true">☾</span><span class="theme-toggle-label">Dark mode</span>
+        </button>
         <a href="#enquire" class="w-full text-center rounded-xl bg-navy px-4 py-3 font-bold text-white shadow-md">Submit Enquiry →</a>
       </div>
     </div>

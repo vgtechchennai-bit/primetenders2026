@@ -258,6 +258,43 @@ html.dark-theme .theme-toggle:hover { background: #302052; border-color: #a78bfa
 .guide-card { min-height: 150px; border: 1px solid #e2e8f0; border-radius: 1rem; background: white; padding: 1.5rem; }
 .guide-card b { color: #0f274a; font: 600 1.1rem 'Space Grotesk', sans-serif; }
 .guide-card p { margin-top: 0.6rem; color: #64748b; font-size: 0.9rem; line-height: 1.55; }
+
+/* Interactive DSC desk challenge. */
+.prime-challenge { position: relative; overflow: hidden; }
+.prime-challenge::before { position: absolute; top: -120px; right: -80px; width: 280px; height: 280px; content: ''; border: 1px solid rgba(239, 131, 84, 0.3); border-radius: 50%; transform: rotate(18deg); }
+.prime-readiness,
+.prime-quiz { position: relative; border: 1px solid #dbe4e2; border-radius: 1.5rem; background: rgba(255, 255, 255, 0.84); padding: 1.5rem; box-shadow: 0 16px 35px rgba(15, 39, 74, 0.08); }
+.prime-score { color: #ef8354; font: 700 1.35rem 'Space Grotesk', sans-serif; }
+.prime-progress,
+.prime-quiz-progress { height: 7px; overflow: hidden; border-radius: 999px; background: #e2e8f0; }
+.prime-progress span,
+.prime-quiz-progress span { display: block; width: 0; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #0d9488, #ef8354); transition: width 280ms ease; }
+.prime-check { display: flex; align-items: flex-start; gap: 10px; margin-top: 1rem; color: #475569; cursor: pointer; font-size: 0.78rem; font-weight: 600; line-height: 1.35; }
+.prime-check input { width: 17px; height: 17px; margin-top: 1px; accent-color: #0d9488; }
+.prime-quiz { min-height: 360px; background: #fff; }
+.prime-quiz-step,
+.prime-result-kicker { color: #0d9488; font: 700 11px 'Space Grotesk', sans-serif; letter-spacing: 0.14em; }
+.prime-quiz-mark { color: #ef8354; font-size: 1.3rem; }
+.prime-quiz-option { display: flex; min-height: 76px; align-items: center; justify-content: space-between; gap: 12px; border: 1px solid #dbe4e2; border-radius: 0.9rem; background: #f8faf9; padding: 1rem; color: #0f274a; text-align: left; font-size: 0.85rem; font-weight: 700; transition: border-color 180ms ease, background-color 180ms ease, transform 180ms ease; }
+.prime-quiz-option span { color: #ef8354; font-size: 1.1rem; }
+.prime-quiz-option:hover,
+.prime-quiz-option:focus-visible { border-color: #0d9488; background: #ecfdf5; outline: none; transform: translateY(-2px); }
+.prime-quiz-result { border-left: 3px solid #ef8354; padding-left: 1.1rem; }
+
+html.dark-theme .prime-readiness,
+html.dark-theme .prime-quiz { border-color: #4b3968; background: #1c1629; box-shadow: 0 16px 35px rgba(0, 0, 0, 0.22); }
+html.dark-theme .prime-check { color: #b9afca; }
+html.dark-theme .prime-progress,
+html.dark-theme .prime-quiz-progress { background: #3a2d50; }
+html.dark-theme .prime-quiz-option { border-color: #4b3968; background: #211932; color: #f2edff; }
+html.dark-theme .prime-quiz-option:hover,
+html.dark-theme .prime-quiz-option:focus-visible { border-color: #a78bfa; background: #302052; }
+
+@media (max-width: 640px) {
+  .prime-readiness,
+  .prime-quiz { padding: 1.25rem; }
+  .prime-quiz { min-height: 0; }
+}
 .guide-card-dark { border-color: rgba(255,255,255,0.12); background: rgba(255,255,255,0.08); }
 .guide-card-dark b { color: white; }
 .guide-card-dark p { color: #cbd5e1; }

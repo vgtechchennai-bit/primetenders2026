@@ -89,6 +89,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
           colors: {
@@ -109,7 +110,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script>
-    if (localStorage.getItem('primetenders-theme') === 'dark') document.documentElement.classList.add('dark-theme');
+    if (localStorage.getItem('primetenders-theme') === 'dark') document.documentElement.classList.add('dark', 'dark-theme');
   </script>
 </head>
 
@@ -132,44 +133,44 @@
 
       <!-- Desktop Navigation -->
       <nav class="hidden items-center gap-1 lg:flex">
-        <a href="#home" class="nav-item">Home</a>
+        <a href="#home" class="rounded-xl px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-white hover:text-slate-900 dark:hover:bg-white dark:hover:text-slate-900">Home</a>
 
         <!-- Services Dropdown -->
         <div class="relative group">
-          <button class="nav-item inline-flex items-center gap-1">
+          <button class="inline-flex items-center gap-1 rounded-xl px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-white hover:text-slate-900 dark:hover:bg-white dark:hover:text-slate-900">
             Services
             <svg class="h-4 w-4 transition-transform group-hover:rotate-180 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
             </svg>
           </button>
-          <div class="dropdown-panel group-hover:visible group-hover:opacity-100">
+          <div class="invisible absolute left-0 top-full w-80 translate-y-2 rounded-2xl border border-slate-200 bg-white opacity-0 shadow-2xl transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
             <div class="p-2 space-y-1">
-              <a href="#services" data-service="Web Design & UI Development" class="dropdown-link group/link">
-                <span class="dropdown-icon bg-indigo-50 text-indigo-600">🌐</span>
+              <a href="#services" data-service="Web Design & UI Development" class="flex items-center gap-3 rounded-xl p-3 transition hover:bg-slate-50 group/link">
+                <span class="grid h-9 w-9 shrink-0 place-items-center rounded-[0.65rem] bg-indigo-50 text-lg text-indigo-600">🌐</span>
                 <div>
-                  <div class="text-sm font-bold text-navy group-hover/link:text-teal">Web Design & Development</div>
-                  <div class="text-xs text-slate-400">Responsive websites, landing pages & portals</div>
+                  <div class="text-sm font-bold text-slate-900 dark:text-slate-100 group-hover/link:text-slate-900">Web Design & Development</div>
+                  <div class="text-xs text-slate-600 dark:text-slate-400 group-hover/link:text-slate-600">Responsive websites, landing pages & portals</div>
                 </div>
               </a>
-              <a href="#services" data-service="Google Sheets & Apps Script" class="dropdown-link group/link">
-                <span class="dropdown-icon bg-emerald-50 text-emerald-600">▦</span>
+              <a href="#services" data-service="Google Sheets & Apps Script" class="flex items-center gap-3 rounded-xl p-3 transition hover:bg-slate-50 group/link">
+                <span class="grid h-9 w-9 shrink-0 place-items-center rounded-[0.65rem] bg-emerald-50 text-lg text-emerald-600">▦</span>
                 <div>
-                  <div class="text-sm font-bold text-navy group-hover/link:text-teal">Google Sheets & Apps Script</div>
-                  <div class="text-xs text-slate-400">Custom business automation, triggers & tools</div>
+                  <div class="text-sm font-bold text-slate-900 dark:text-slate-100 group-hover/link:text-slate-900">Google Sheets & Apps Script</div>
+                  <div class="text-xs text-slate-600 dark:text-slate-400 group-hover/link:text-slate-600">Custom business automation, triggers & tools</div>
                 </div>
               </a>
-              <a href="#services" data-service="MS Excel & VBA" class="dropdown-link group/link">
-                <span class="dropdown-icon bg-amber-50 text-amber-600">▤</span>
+              <a href="#services" data-service="MS Excel & VBA" class="flex items-center gap-3 rounded-xl p-3 transition hover:bg-slate-50 group/link">
+                <span class="grid h-9 w-9 shrink-0 place-items-center rounded-[0.65rem] bg-amber-50 text-lg text-amber-600">▤</span>
                 <div>
-                  <div class="text-sm font-bold text-navy group-hover/link:text-teal">MS Excel & Macros (VBA)</div>
-                  <div class="text-xs text-slate-400">Data consolidation, reporting & dashboards</div>
+                  <div class="text-sm font-bold text-slate-900 dark:text-slate-100 group-hover/link:text-slate-900">MS Excel & Macros (VBA)</div>
+                  <div class="text-xs text-slate-600 dark:text-slate-400 group-hover/link:text-slate-600">Data consolidation, reporting & dashboards</div>
                 </div>
               </a>
-              <a href="#services" data-service="Tender & GeM Services" class="dropdown-link group/link">
-                <span class="dropdown-icon bg-sky/15 text-sky">✓</span>
+              <a href="#services" data-service="Tender & GeM Services" class="flex items-center gap-3 rounded-xl p-3 transition hover:bg-slate-50 group/link">
+                <span class="grid h-9 w-9 shrink-0 place-items-center rounded-[0.65rem] bg-sky/15 text-sky">✓</span>
                 <div>
-                  <div class="text-sm font-bold text-navy group-hover/link:text-teal">Tender & GeM Consultancy</div>
-                  <div class="text-xs text-slate-400">Documentation, submission & portal bidding</div>
+                  <div class="text-sm font-bold text-slate-900 dark:text-slate-100 group-hover/link:text-slate-900">Tender & GeM Consultancy</div>
+                  <div class="text-xs text-slate-600 dark:text-slate-400 group-hover/link:text-slate-600">Documentation, submission & portal bidding</div>
                 </div>
               </a>
             </div>
@@ -178,40 +179,40 @@
 
         <!-- Products Dropdown -->
         <div class="relative group">
-          <button class="nav-item inline-flex items-center gap-1">
+          <button class="inline-flex items-center gap-1 rounded-xl px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-white hover:text-slate-900 dark:hover:bg-white dark:hover:text-slate-900">
             Products
             <svg class="h-4 w-4 transition-transform group-hover:rotate-180 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
             </svg>
           </button>
-          <div class="dropdown-panel group-hover:visible group-hover:opacity-100">
+          <div class="invisible absolute left-0 top-full w-80 translate-y-2 rounded-2xl border border-slate-200 bg-white opacity-0 shadow-2xl transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
             <div class="p-2 space-y-1">
-              <a href="#products" data-service="Digital Signature Certificate (DSC)" class="dropdown-link group/link">
-                <span class="dropdown-icon bg-rose-50 text-rose-600">🔐</span>
+              <a href="#products" data-service="Digital Signature Certificate (DSC)" class="flex items-center gap-3 rounded-xl p-3 transition hover:bg-slate-50 group/link">
+                <span class="grid h-9 w-9 shrink-0 place-items-center rounded-[0.65rem] bg-rose-50 text-lg text-rose-600">🔐</span>
                 <div>
-                  <div class="text-sm font-bold text-navy group-hover/link:text-teal">Digital Signature (DSC)</div>
-                  <div class="text-xs text-slate-400">Class 3 DSC with USB token for e-tendering</div>
+                  <div class="text-sm font-bold text-slate-900 dark:text-slate-100 group-hover/link:text-slate-900">Digital Signature (DSC)</div>
+                  <div class="text-xs text-slate-600 dark:text-slate-400 group-hover/link:text-slate-600">Class 3 DSC with USB token for e-tendering</div>
                 </div>
               </a>
-              <a href="#products" data-service="Custom Web Apps" class="dropdown-link group/link">
-                <span class="dropdown-icon bg-teal/10 text-teal">⌘</span>
+              <a href="#products" data-service="Custom Web Apps" class="flex items-center gap-3 rounded-xl p-3 transition hover:bg-slate-50 group/link">
+                <span class="grid h-9 w-9 shrink-0 place-items-center rounded-[0.65rem] bg-teal/10 text-lg text-teal">⌘</span>
                 <div>
-                  <div class="text-sm font-bold text-navy group-hover/link:text-teal">Turnkey Web Applications</div>
-                  <div class="text-xs text-slate-400">CRM, Quotation engines, MIS portals</div>
+                  <div class="text-sm font-bold text-slate-900 dark:text-slate-100 group-hover/link:text-slate-900">Turnkey Web Applications</div>
+                  <div class="text-xs text-slate-600 dark:text-slate-400 group-hover/link:text-slate-600">CRM, Quotation engines, MIS portals</div>
                 </div>
               </a>
             </div>
           </div>
         </div>
 
-        <a href="#automation" class="nav-item">Automation Flow</a>
-        <a href="#about" class="nav-item">About</a>
+        <a href="#automation" class="rounded-xl px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-white hover:text-slate-900 dark:hover:bg-white dark:hover:text-slate-900">Automation Flow</a>
+        <a href="#about" class="rounded-xl px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-white hover:text-slate-900 dark:hover:bg-white dark:hover:text-slate-900">About</a>
       </nav>
 
       <!-- Desktop Actions -->
       <div class="hidden items-center gap-3 sm:flex">
-        <button id="themeToggle" type="button" class="theme-toggle" aria-label="Switch to dark mode" aria-pressed="false">
-          <span class="theme-toggle-icon" aria-hidden="true">☾</span><span class="theme-toggle-label">Dark mode</span>
+        <button id="themeToggle" type="button" class="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-xs font-bold text-navy transition hover:border-violet-400 hover:bg-violet-50 hover:text-violet-700" aria-label="Switch to dark mode" aria-pressed="false">
+          <span class="theme-toggle-icon text-[17px] leading-none" aria-hidden="true">☾</span><span class="theme-toggle-label">Dark mode</span>
         </button>
         <a href="tel:+918148147577" class="rounded-xl px-4 py-2.5 text-sm font-bold text-navy hover:bg-slate-100 transition">
           +91 814 814 7577
@@ -232,7 +233,7 @@
     <!-- Mobile Drawer Menu -->
     <div id="mobileMenu" class="hidden border-t border-slate-100 bg-white px-6 py-6 shadow-xl lg:hidden max-h-[85vh] overflow-y-auto">
       <div class="flex flex-col space-y-4">
-        <a href="#home" class="mobile-nav-link">Home</a>
+        <a href="#home" class="py-1 text-base font-bold text-navy hover:text-teal">Home</a>
         
         <div class="py-2 border-y border-slate-100">
           <div class="text-xs font-black uppercase tracking-wider text-slate-400 mb-2">Services</div>
@@ -252,10 +253,10 @@
           </div>
         </div>
 
-        <a href="#automation" class="mobile-nav-link">Automation Flow</a>
-        <a href="#about" class="mobile-nav-link">About Company</a>
-        <button id="mobileThemeToggle" type="button" class="theme-toggle w-full justify-center" aria-label="Switch to dark mode" aria-pressed="false">
-          <span class="theme-toggle-icon" aria-hidden="true">☾</span><span class="theme-toggle-label">Dark mode</span>
+        <a href="#automation" class="py-1 text-base font-bold text-navy hover:text-teal">Automation Flow</a>
+        <a href="#about" class="py-1 text-base font-bold text-navy hover:text-teal">About Company</a>
+        <button id="mobileThemeToggle" type="button" class="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-xs font-bold text-navy transition hover:border-violet-400 hover:bg-violet-50 hover:text-violet-700" aria-label="Switch to dark mode" aria-pressed="false">
+          <span class="theme-toggle-icon text-[17px] leading-none" aria-hidden="true">☾</span><span class="theme-toggle-label">Dark mode</span>
         </button>
         <a href="#enquire" class="w-full text-center rounded-xl bg-navy px-4 py-3 font-bold text-white shadow-md">Submit Enquiry →</a>
       </div>
@@ -370,7 +371,7 @@
             <span class="text-xs font-black uppercase tracking-widest text-teal">THE DSC DESK CHALLENGE</span>
             <h2 class="mt-2 text-3xl font-extrabold tracking-tight text-navy sm:text-4xl">Find your best next move in 30 seconds.</h2>
             <p class="mt-3 text-base leading-relaxed text-slate-600">Answer three quick questions and get a practical starting point for your certificate, tender work or business automation.</p>
-            <div class="prime-readiness mt-8">
+            <div class="relative mt-8 rounded-3xl border border-[#dbe4e2] bg-white/85 p-6 shadow-[0_16px_35px_rgba(15,39,74,0.08)] dark:border-[#4b3968] dark:bg-[#1c1629] sm:p-6">
               <div class="flex items-center justify-between gap-4">
                 <div>
                   <span class="text-xs font-black uppercase tracking-widest text-teal">PORTAL READINESS</span>
@@ -378,26 +379,26 @@
                 </div>
                 <strong id="readinessScore" class="prime-score">0%</strong>
               </div>
-              <div class="prime-progress mt-4"><span id="readinessBar"></span></div>
-              <label class="prime-check"><input type="checkbox" class="readiness-item"> I know which portal I need to use</label>
-              <label class="prime-check"><input type="checkbox" class="readiness-item"> My mobile number and email are active</label>
-              <label class="prime-check"><input type="checkbox" class="readiness-item"> I have identity or business documents ready</label>
-              <label class="prime-check"><input type="checkbox" class="readiness-item"> I know whether I need signing or encryption</label>
+              <div class="mt-4 h-2 overflow-hidden rounded-full bg-slate-200 dark:bg-[#3a2d50]"><span id="readinessBar" class="block h-full w-0 rounded-full bg-gradient-to-r from-teal to-[#ef8354] transition-[width] duration-300"></span></div>
+              <label class="mt-4 flex cursor-pointer items-start gap-2.5 text-xs font-semibold leading-snug text-slate-600 dark:text-slate-200"><input type="checkbox" class="readiness-item peer sr-only"><span class="grid h-[17px] w-[17px] shrink-0 place-items-center rounded border border-slate-400 bg-transparent text-[12px] font-black text-white transition peer-focus-visible:ring-2 peer-focus-visible:ring-teal peer-checked:border-teal peer-checked:bg-teal peer-checked:after:content-['✓'] dark:border-slate-500 dark:peer-checked:border-[#c4b5fd] dark:peer-checked:bg-[#c4b5fd] dark:peer-checked:text-[#0f172a]"> </span> I know which portal I need to use</label>
+              <label class="mt-4 flex cursor-pointer items-start gap-2.5 text-xs font-semibold leading-snug text-slate-600 dark:text-slate-200"><input type="checkbox" class="readiness-item peer sr-only"><span class="grid h-[17px] w-[17px] shrink-0 place-items-center rounded border border-slate-400 bg-transparent text-[12px] font-black text-white transition peer-focus-visible:ring-2 peer-focus-visible:ring-teal peer-checked:border-teal peer-checked:bg-teal peer-checked:after:content-['✓'] dark:border-slate-500 dark:peer-checked:border-[#c4b5fd] dark:peer-checked:bg-[#c4b5fd] dark:peer-checked:text-[#0f172a]"> </span> My mobile number and email are active</label>
+              <label class="mt-4 flex cursor-pointer items-start gap-2.5 text-xs font-semibold leading-snug text-slate-600 dark:text-slate-200"><input type="checkbox" class="readiness-item peer sr-only"><span class="grid h-[17px] w-[17px] shrink-0 place-items-center rounded border border-slate-400 bg-transparent text-[12px] font-black text-white transition peer-focus-visible:ring-2 peer-focus-visible:ring-teal peer-checked:border-teal peer-checked:bg-teal peer-checked:after:content-['✓'] dark:border-slate-500 dark:peer-checked:border-[#c4b5fd] dark:peer-checked:bg-[#c4b5fd] dark:peer-checked:text-[#0f172a]"> </span> I have identity or business documents ready</label>
+              <label class="mt-4 flex cursor-pointer items-start gap-2.5 text-xs font-semibold leading-snug text-slate-600 dark:text-slate-200"><input type="checkbox" class="readiness-item peer sr-only"><span class="grid h-[17px] w-[17px] shrink-0 place-items-center rounded border border-slate-400 bg-transparent text-[12px] font-black text-white transition peer-focus-visible:ring-2 peer-focus-visible:ring-teal peer-checked:border-teal peer-checked:bg-teal peer-checked:after:content-['✓'] dark:border-slate-500 dark:peer-checked:border-[#c4b5fd] dark:peer-checked:bg-[#c4b5fd] dark:peer-checked:text-[#0f172a]"> </span> I know whether I need signing or encryption</label>
             </div>
           </div>
 
           <div class="lg:col-span-7">
-            <div class="prime-quiz">
+            <div class="relative min-h-[360px] rounded-3xl border border-[#dbe4e2] bg-white p-6 shadow-[0_16px_35px_rgba(15,39,74,0.08)] dark:border-[#4b3968] dark:bg-[#1c1629] sm:p-6">
               <div class="flex items-center justify-between gap-4">
-                <span id="quizStep" class="prime-quiz-step">QUESTION 1 / 3</span>
-                <span class="prime-quiz-mark">✦</span>
+                <span id="quizStep" class="text-[11px] font-bold tracking-[0.14em] text-teal">QUESTION 1 / 3</span>
+                <span class="text-xl text-[#ef8354]">✦</span>
               </div>
-              <div class="prime-quiz-progress mt-4"><span id="quizBar"></span></div>
+              <div class="mt-4 h-2 overflow-hidden rounded-full bg-slate-200 dark:bg-[#3a2d50]"><span id="quizBar" class="block h-full w-0 rounded-full bg-gradient-to-r from-teal to-[#ef8354] transition-[width] duration-300"></span></div>
               <div id="quizPanel" class="mt-7">
                 <h3 id="quizQuestion" class="text-2xl font-extrabold text-navy">What brings you here today?</h3>
                 <div id="quizOptions" class="mt-5 grid gap-3 sm:grid-cols-3"></div>
               </div>
-              <div id="quizResult" class="prime-quiz-result mt-6 hidden" aria-live="polite">
+              <div id="quizResult" class="mt-6 hidden border-l-[3px] border-[#ef8354] pl-4" aria-live="polite">
                 <span class="prime-result-kicker">YOUR STARTING POINT</span>
                 <h3 id="quizResultTitle" class="mt-2 text-2xl font-extrabold text-navy"></h3>
                 <p id="quizResultText" class="mt-2 text-sm leading-relaxed text-slate-600"></p>
@@ -679,24 +680,24 @@
             <p class="mt-3 text-sm text-slate-600">Start with your primary requirement. We will call you with the next steps, documents, and a clear quotation.</p>
 
             <div class="mt-8 space-y-4">
-              <a href="https://wa.me/918148147577" target="_blank" rel="noopener noreferrer" class="contact-card">
-                <div class="contact-icon bg-emerald-50 text-emerald-600">💬</div>
+              <a href="https://wa.me/918148147577" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-4 transition hover:-translate-x-1 hover:border-teal">
+                <div class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-emerald-50 text-xl text-emerald-600">💬</div>
                 <div>
                   <div class="text-xs font-bold text-navy">WhatsApp Support</div>
                   <div class="text-sm font-bold text-slate-600">+91 814 814 7577</div>
                 </div>
               </a>
 
-              <a href="mailto:vijaynewmailbox@gmail.com" class="contact-card">
-                <div class="contact-icon bg-sky/15 text-navy">✉</div>
+              <a href="mailto:vijaynewmailbox@gmail.com" class="flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-4 transition hover:-translate-x-1 hover:border-teal">
+                <div class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-sky/15 text-xl text-navy">✉</div>
                 <div>
                   <div class="text-xs font-bold text-navy">Email Us</div>
                   <div class="text-sm font-bold text-slate-600">vijaynewmailbox@gmail.com</div>
                 </div>
               </a>
 
-              <div class="contact-card">
-                <div class="contact-icon bg-indigo-50 text-indigo-600">📍</div>
+              <div class="flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-4 transition hover:-translate-x-1 hover:border-teal">
+                <div class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-indigo-50 text-xl text-indigo-600">📍</div>
                 <div>
                   <div class="text-xs font-bold text-navy">Location</div>
                   <div class="text-sm font-bold text-slate-600">Chennai, Tamil Nadu, India</div>
@@ -710,36 +711,51 @@
             <form id="enquiryForm" class="rounded-3xl border border-slate-200 bg-white p-7 shadow-xl sm:p-10">
               <div class="grid gap-5 sm:grid-cols-2">
                 <div>
-                  <label for="nameInput">Full Name</label>
-                  <input id="nameInput" name="name" placeholder="John Doe">
+                  <label class="mb-1 block text-xs font-bold uppercase tracking-wider text-navy" for="nameInput">Full Name</label>
+                  <input class="h-12 w-full rounded-xl border border-slate-300 bg-white px-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-teal focus:ring-4 focus:ring-teal/15" id="nameInput" name="name" placeholder="John Doe">
                 </div>
                 <div>
-                  <label for="companyInput">Company Name</label>
-                  <input id="companyInput" name="company" placeholder="Enterprise / Firm Ltd.">
+                  <label class="mb-1 block text-xs font-bold uppercase tracking-wider text-navy" for="companyInput">Company Name</label>
+                  <input class="h-12 w-full rounded-xl border border-slate-300 bg-white px-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-teal focus:ring-4 focus:ring-teal/15" id="companyInput" name="company" placeholder="Enterprise / Firm Ltd.">
                 </div>
                 <div>
-                  <label for="mobileInput">Mobile / WhatsApp <em>*</em></label>
-                  <input id="mobileInput" name="mobile" type="tel" required placeholder="+91 98765 43210">
+                  <label class="mb-1 block text-xs font-bold uppercase tracking-wider text-navy" for="mobileInput">Mobile / WhatsApp <em class="not-italic text-rose-600">*</em></label>
+                  <input class="h-12 w-full rounded-xl border border-slate-300 bg-white px-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-teal focus:ring-4 focus:ring-teal/15" id="mobileInput" name="mobile" type="tel" required placeholder="+91 98765 43210">
                 </div>
                 <div>
-                  <label for="emailInput">Email Address</label>
-                  <input id="emailInput" name="email" type="email" placeholder="name@company.com">
+                  <label class="mb-1 block text-xs font-bold uppercase tracking-wider text-navy" for="emailInput">Email Address</label>
+                  <input class="h-12 w-full rounded-xl border border-slate-300 bg-white px-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-teal focus:ring-4 focus:ring-teal/15" id="emailInput" name="email" type="email" placeholder="name@company.com">
                 </div>
                 <div class="sm:col-span-2">
-                  <label for="serviceSelect">What do you need?</label>
-                  <select id="serviceSelect" name="service" required>
-                    <option value="Digital Signature Certificate (DSC)" selected>Digital Signature Certificate (DSC - Class 3)</option>
-                    <option value="Google Sheets & Apps Script">Google Sheets & Apps Script Automation</option>
-                    <option value="MS Excel & VBA">MS Excel & VBA Macro Solutions</option>
-                    <option value="Tender & GeM Services">Tender & GeM Consultation</option>
-                    <option value="Web Design & UI Development">Web Design & UI Development</option>
-                    <option value="Custom Web Apps">Custom Web Applications</option>
-                    <option value="Other">Other Custom Inquiry</option>
-                  </select>
+                  <label class="mb-1 block text-xs font-bold uppercase tracking-wider text-navy" for="serviceSelect">What do you need?</label>
+                  <div class="group relative">
+                    <select class="sr-only" id="serviceSelect" name="service" required>
+                      <option class="bg-white text-slate-900 dark:bg-[#211932] dark:text-slate-100" value="Digital Signature Certificate (DSC)" selected>Digital Signature Certificate (DSC - Class 3)</option>
+                      <option class="bg-white text-slate-900 dark:bg-[#211932] dark:text-slate-100" value="Google Sheets & Apps Script">Google Sheets & Apps Script Automation</option>
+                      <option class="bg-white text-slate-900 dark:bg-[#211932] dark:text-slate-100" value="MS Excel & VBA">MS Excel & VBA Macro Solutions</option>
+                      <option class="bg-white text-slate-900 dark:bg-[#211932] dark:text-slate-100" value="Tender & GeM Services">Tender & GeM Consultation</option>
+                      <option class="bg-white text-slate-900 dark:bg-[#211932] dark:text-slate-100" value="Web Design & UI Development">Web Design & UI Development</option>
+                      <option class="bg-white text-slate-900 dark:bg-[#211932] dark:text-slate-100" value="Custom Web Apps">Custom Web Applications</option>
+                      <option class="bg-white text-slate-900 dark:bg-[#211932] dark:text-slate-100" value="Other">Other Custom Inquiry</option>
+                    </select>
+                    <button id="serviceSelectButton" type="button" class="flex h-14 w-full items-center justify-between rounded-2xl border border-slate-300 bg-white px-5 text-left text-sm text-slate-900 shadow-sm transition duration-200 hover:border-teal hover:shadow-md focus:border-teal focus:outline-none focus:ring-4 focus:ring-teal/15 dark:border-[#5b4380] dark:bg-[#211932] dark:text-slate-100 dark:hover:border-[#a78bfa] dark:hover:shadow-[0_8px_24px_rgba(0,0,0,0.2)] dark:focus:border-[#a78bfa] dark:focus:ring-[#a78bfa]/20" aria-haspopup="listbox" aria-expanded="false">
+                      <span id="serviceSelectLabel">Digital Signature Certificate (DSC - Class 3)</span>
+                      <svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform duration-200 group-[.is-open]:rotate-180 dark:text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9 6 6 6-6"/></svg>
+                    </button>
+                    <div id="serviceSelectMenu" class="invisible absolute left-0 right-0 top-[calc(100%+0.5rem)] z-20 translate-y-2 rounded-2xl border border-slate-200 bg-white p-2 opacity-0 shadow-2xl transition-all duration-200 group-[.is-open]:visible group-[.is-open]:translate-y-0 group-[.is-open]:opacity-100 dark:border-[#4b3968] dark:bg-[#211932]" role="listbox">
+                      <button type="button" class="service-option w-full rounded-xl px-4 py-3 text-left text-sm font-semibold text-slate-700 transition hover:bg-teal/10 hover:text-teal dark:text-slate-200 dark:hover:bg-[#302052] dark:hover:text-[#c4b5fd]" data-value="Digital Signature Certificate (DSC)" role="option">Digital Signature Certificate (DSC - Class 3)</button>
+                      <button type="button" class="service-option w-full rounded-xl px-4 py-3 text-left text-sm font-semibold text-slate-700 transition hover:bg-teal/10 hover:text-teal dark:text-slate-200 dark:hover:bg-[#302052] dark:hover:text-[#c4b5fd]" data-value="Google Sheets & Apps Script" role="option">Google Sheets &amp; Apps Script Automation</button>
+                      <button type="button" class="service-option w-full rounded-xl px-4 py-3 text-left text-sm font-semibold text-slate-700 transition hover:bg-teal/10 hover:text-teal dark:text-slate-200 dark:hover:bg-[#302052] dark:hover:text-[#c4b5fd]" data-value="MS Excel & VBA" role="option">MS Excel &amp; VBA Macro Solutions</button>
+                      <button type="button" class="service-option w-full rounded-xl px-4 py-3 text-left text-sm font-semibold text-slate-700 transition hover:bg-teal/10 hover:text-teal dark:text-slate-200 dark:hover:bg-[#302052] dark:hover:text-[#c4b5fd]" data-value="Tender & GeM Services" role="option">Tender &amp; GeM Consultation</button>
+                      <button type="button" class="service-option w-full rounded-xl px-4 py-3 text-left text-sm font-semibold text-slate-700 transition hover:bg-teal/10 hover:text-teal dark:text-slate-200 dark:hover:bg-[#302052] dark:hover:text-[#c4b5fd]" data-value="Web Design & UI Development" role="option">Web Design &amp; UI Development</button>
+                      <button type="button" class="service-option w-full rounded-xl px-4 py-3 text-left text-sm font-semibold text-slate-700 transition hover:bg-teal/10 hover:text-teal dark:text-slate-200 dark:hover:bg-[#302052] dark:hover:text-[#c4b5fd]" data-value="Custom Web Apps" role="option">Custom Web Applications</button>
+                      <button type="button" class="service-option w-full rounded-xl px-4 py-3 text-left text-sm font-semibold text-slate-700 transition hover:bg-teal/10 hover:text-teal dark:text-slate-200 dark:hover:bg-[#302052] dark:hover:text-[#c4b5fd]" data-value="Other" role="option">Other Custom Inquiry</button>
+                    </div>
+                  </div>
                 </div>
                 <div class="sm:col-span-2">
-                  <label for="detailsInput">Requirement Details</label>
-                  <textarea id="detailsInput" name="details" rows="4" placeholder="Briefly describe what you'd like to achieve..."></textarea>
+                  <label class="mb-1 block text-xs font-bold uppercase tracking-wider text-navy" for="detailsInput">Requirement Details</label>
+                  <textarea class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-teal focus:ring-4 focus:ring-teal/15" id="detailsInput" name="details" rows="4" placeholder="Briefly describe what you'd like to achieve..."></textarea>
                 </div>
                 <div class="sm:col-span-2">
                   <button id="submitBtn" type="submit" class="w-full rounded-xl bg-navy py-4 text-sm font-bold text-white shadow-lg shadow-navy/20 transition-all hover:bg-teal hover:-translate-y-0.5">

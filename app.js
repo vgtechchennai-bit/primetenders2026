@@ -25,6 +25,7 @@ const updateThemeToggle = () => {
 themeToggles.forEach(toggle => {
   toggle.addEventListener('click', () => {
     const isDark = document.documentElement.classList.toggle('dark-theme');
+    document.documentElement.classList.toggle('dark', isDark);
     localStorage.setItem('primetenders-theme', isDark ? 'dark' : 'light');
     updateThemeToggle();
   });
@@ -36,11 +37,55 @@ document.getElementById('year').textContent = new Date().getFullYear();
 
 // Quick-select preset service on dropdown / button click
 const serviceSelect = document.getElementById('serviceSelect');
+const serviceSelectWrap = document.getElementById('serviceSelectButton')?.parentElement;
+const serviceSelectButton = document.getElementById('serviceSelectButton');
+const serviceSelectLabel = document.getElementById('serviceSelectLabel');
+const serviceSelectMenu = document.getElementById('serviceSelectMenu');
+
+const serviceLabels = {
+  'Digital Signature Certificate (DSC)': 'Digital Signature Certificate (DSC - Class 3)',
+  'Google Sheets & Apps Script': 'Google Sheets & Apps Script Automation',
+  'MS Excel & VBA': 'MS Excel & VBA Macro Solutions',
+  'Tender & GeM Services': 'Tender & GeM Consultation',
+  'Web Design & UI Development': 'Web Design & UI Development',
+  'Custom Web Apps': 'Custom Web Applications',
+  Other: 'Other Custom Inquiry'
+};
+
+function setSelectedService(value) {
+  if (!serviceSelect || !serviceLabels[value]) return;
+  serviceSelect.value = value;
+  if (serviceSelectLabel) serviceSelectLabel.textContent = serviceLabels[value];
+  serviceSelectMenu?.querySelectorAll('.service-option').forEach(option => {
+    option.setAttribute('aria-selected', String(option.dataset.value === value));
+  });
+}
+
+serviceSelectButton?.addEventListener('click', () => {
+  const isOpen = serviceSelectWrap.classList.toggle('is-open');
+  serviceSelectButton.setAttribute('aria-expanded', String(isOpen));
+});
+
+serviceSelectMenu?.querySelectorAll('.service-option').forEach(option => {
+  option.addEventListener('click', () => {
+    setSelectedService(option.dataset.value);
+    serviceSelectWrap.classList.remove('is-open');
+    serviceSelectButton.setAttribute('aria-expanded', 'false');
+  });
+});
+
+document.addEventListener('click', event => {
+  if (serviceSelectWrap && !serviceSelectWrap.contains(event.target)) {
+    serviceSelectWrap.classList.remove('is-open');
+    serviceSelectButton?.setAttribute('aria-expanded', 'false');
+  }
+});
+
 document.querySelectorAll('[data-service]').forEach(btn => {
   btn.addEventListener('click', (e) => {
     const selectedService = btn.getAttribute('data-service');
     if (selectedService && serviceSelect) {
-      serviceSelect.value = selectedService;
+      setSelectedService(selectedService);
     }
   });
 });
@@ -110,7 +155,7 @@ function showQuizQuestion() {
   quizBar.style.width = `${(questionIndex / quizQuestions.length) * 100}%`;
   quizQuestion.textContent = question.question;
   quizOptions.innerHTML = question.options.map(option => `
-    <button type="button" class="prime-quiz-option" data-quiz-value="${option.value}">${option.label}<span>→</span></button>
+    <button type="button" class="flex min-h-[76px] items-center justify-between gap-3 rounded-[0.9rem] border border-[#dbe4e2] bg-[#f8faf9] p-4 text-left text-sm font-bold text-slate-900 transition hover:-translate-y-0.5 hover:border-teal hover:bg-emerald-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal dark:border-[#4b3968] dark:bg-[#211932] dark:text-slate-100 dark:hover:bg-[#302052]" data-quiz-value="${option.value}">${option.label}<span class="text-lg text-[#ef8354]">→</span></button>
   `).join('');
   quizOptions.querySelectorAll('[data-quiz-value]').forEach(option => {
     option.addEventListener('click', () => {
@@ -215,6 +260,7 @@ form.addEventListener('submit', async (e) => {
     if (!result.success) throw new Error(result.message || 'Unable to save enquiry.');
 
     form.reset();
+    setSelectedService('Digital Signature Certificate (DSC)');
     status.textContent = '✓ Thank you! Your enquiry has been received. We will contact you shortly.';
     status.classList.add('text-emerald-600');
   } catch (error) {

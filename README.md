@@ -1,41 +1,29 @@
-# PrimeTender.in — Premium Tailwind Website
+# PrimeTenders.in — Tailwind CSS Website
+
+## Service priority
+1. Tender management / GeM bidding (`#tender`, `tender-gem-bidding.html`)
+2. Web application development (`#webapp`, `web-app-development.html`)
+3. DSC vendor (`#dsc`, `class-3-dsc.html` and the DSC guide pages)
 
 ## Technology
-- HTML5
-- Tailwind CSS CDN
-- Small custom CSS layer
-- Vanilla JavaScript
-- Google Apps Script
-- Google Sheets
+- HTML5 + Tailwind CSS (CDN). No separate stylesheet: shared component classes live in an inline `<style type="text/tailwindcss">` block (marked COMPONENTS:START/END) in every page. Dark mode uses Tailwind `dark:` variants.
+- Vanilla JavaScript (`app.js`), Google Apps Script (`Code.gs`), Google Sheets
 
-## Pages / sections
-- Hero
-- Services
-- Automation workflow
-- Process
-- About / CTA
-- Enquiry form
-- Footer
-- Responsive mobile navigation
+## Images (keep in the site root)
+- `vg.png` — logo / favicon
+- `tender-gem.png` — hero + Tender & GeM section
+- `webapp-development.png` — Web App section
+- `dsc-class3.png` — DSC section
 
 ## Google Sheets connection
-1. Create a Google Sheet.
-2. Extensions → Apps Script.
-3. Paste `Code.gs`.
-4. Deploy → New deployment → Web app.
-5. Execute as: Me.
-6. Set access according to your hosting requirement.
-7. Copy the Web App URL.
-8. Put it into `config.js`.
+1. Create a Google Sheet, then Extensions → Apps Script.
+2. Paste `Code.gs`, then Deploy → New deployment → Web app (Execute as: Me, access: Anyone).
+3. Put the /exec URL in `config.js`.
 
-The form creates/uses an `Enquiries` sheet with:
-Timestamp | Name | Company Name | Mobile / WhatsApp | Email | Service Required | Requirement Details | Status
+The form writes to an `Enquiries` sheet: Timestamp | Name | Company Name | Mobile / WhatsApp | Email | Service Required | Requirement Details | Status
 
-## Important
-This version uses Tailwind through the CDN for easy deployment and editing. For a production build, compile Tailwind locally to remove unused CSS and improve performance.
-
-## Hosting
-Works on Netlify, GitHub Pages, any static hosting, or can be adapted into Google Apps Script HTML Service.
+## Production note
+Tailwind CDN is fine for simple hosting. For production, compile Tailwind locally to remove unused CSS.
 
 ## SEO
-The DSC content cluster uses root-level pages for simple GitHub Pages hosting: `class-3-dsc.html`, `dsc-vendor-chennai.html`, `dsc-purchase-documents.html`, and `dsc-e-tendering.html`. See [OFF_PAGE_SEO.md](OFF_PAGE_SEO.md) for the legitimate backlink, local listing, review, social distribution and measurement checklist.
+Root-level pages suit GitHub Pages / Netlify. Submit `sitemap.xml` in Search Console. See `OFF_PAGE_SEO.md`.

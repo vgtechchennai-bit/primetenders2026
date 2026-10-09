@@ -9,11 +9,11 @@
 - HTML5 + Tailwind CSS (CDN). No separate stylesheet: shared component classes live in an inline `<style type="text/tailwindcss">` block (marked COMPONENTS:START/END) in every page. Dark mode uses Tailwind `dark:` variants.
 - Vanilla JavaScript (`app.js`), Google Apps Script (`Code.gs`), Google Sheets
 
-## Images (keep in the site root)
+## Images
 - `vg.png` — logo / favicon
-- `GeM_E-Tendering.png` — hero + Tender & GeM section
-- `webapp.png` — Web App section
-- `DSC.png` — DSC section
+- `images/gem-tender.jpg` — hero + Tender & GeM section
+- `images/web-app.jpg` — Web App section
+- `images/dsc.jpg` — DSC section
 
 ## Google Sheets connection
 1. Create a Google Sheet, then Extensions → Apps Script.

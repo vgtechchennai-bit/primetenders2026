@@ -11,9 +11,10 @@
 
 ## Images
 - `vg.png` — logo / favicon
-- `images/gem-tender.png` — hero + Tender & GeM section
-- `images/web-app.png` — Web App section
-- `images/dsc.png` — DSC section
+- `images/gem-tender.webp` — hero + Tender & GeM section
+- `images/web-app.webp` — Web App section
+- `images/dsc.webp` — DSC section
+- `images/og-image.jpg` — social share image (1200x630)
 
 ## Google Sheets connection
 1. Create a Google Sheet, then Extensions → Apps Script.
